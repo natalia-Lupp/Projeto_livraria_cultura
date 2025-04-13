@@ -1,7 +1,7 @@
 # Projeto_livraria_cultura
 Projeto para o segundo sementre do curso de TSI da utfpr para ensinar o desenvolvimento de paginas Web
 ### **Autor:** Natalia Rodrigues Lupp
-Este projeto tem como objetivo implementar progressivamente e de forma didática uma aplicação web inspairada na tradicional Livraria Cultura 
+Este projeto tem como objetivo implementar progressivamente e de forma didática uma aplicação web inspirada na tradicional Livraria Cultura localizada em São Paulo
 
 O frontend da aplicação foi desenvolvido com HTML, CSS e JavaScript e o backend foi simulado pela implementação de uma API Fake, usando o JSON Server.
 
