@@ -8,8 +8,10 @@ O frontend da aplicação foi desenvolvido com HTML, CSS e JavaScript e o backen
 ## Design das Telas - Figma: 
 https://www.figma.com/design/g9iGwfOHeHWNfYg65KNpr0/Projeto_livraria?t=u3duqzVCKgCsL9Gu-0
 
+
 ## Design System: 
 Link para o PDF
+[Tema_do_projeto_Natalia_lupp.pdf](https://github.com/user-attachments/files/19728128/Tema_do_projeto_Natalia_lupp.pdf)
 (link do site de inspiração (link temporario)
 https://www.livrariacultura.com.br/
 
@@ -80,7 +82,6 @@ https://github.com/natalia-Lupp/Projeto_livraria_cultura
 - Executar o projeto frontend.
 
 ## Telas da aplicação
-![image](https://github.com/user-attachments/assets/05283ef1-8986-437c-a9a9-55bd99c36727) // mudar imagens para a do projeto
-![image](https://github.com/user-attachments/assets/b38a3b57-c182-4a65-84f1-7a2707ec44ea)
-![image](https://github.com/user-attachments/assets/d62133be-d584-4d7d-8f9b-fcbfff5360c3)
-
+![1_tela_inicial](https://github.com/user-attachments/assets/d7f5ebda-0961-4aaf-b564-d51bb80a6248)
+![2_tela_inicial](https://github.com/user-attachments/assets/9965d515-d0a2-4384-b744-fc55e94efc1f)
+![3_tela_inicial](https://github.com/user-attachments/assets/e49d4f2d-a786-4056-af1e-f7d386f368a0)
