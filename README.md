@@ -12,8 +12,6 @@ https://www.figma.com/design/g9iGwfOHeHWNfYg65KNpr0/Projeto_livraria?t=u3duqzVCK
 ## Design System: 
 Link para o PDF
 [Tema_do_projeto_Natalia_lupp.pdf](https://github.com/user-attachments/files/19728128/Tema_do_projeto_Natalia_lupp.pdf)
-(link do site de inspiração (link temporario)
-https://www.livrariacultura.com.br/
 
 ## Site em Produção - GitHub Pages
 https://github.com/natalia-Lupp/Projeto_livraria_cultura
