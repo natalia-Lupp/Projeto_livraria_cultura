@@ -10,11 +10,12 @@ https://www.figma.com/design/g9iGwfOHeHWNfYg65KNpr0/Projeto_livraria?node-id=0-1
 
 
 ## Design System: 
-Link para o PDF
+
 [Tema_do_projeto_Natalia_lupp.pdf](https://github.com/user-attachments/files/19728128/Tema_do_projeto_Natalia_lupp.pdf)
 
-[Natalia_lupp_decisoes_design_system.pdf](https://github.com/user-attachments/files/19824558/Natalia_lupp_decisoes_design_system.pdf)
+[Natalia_lupp_decisoes_design_system.pdf](https://github.com/user-attachments/files/19824875/Natalia_lupp_decisoes_design_system.pdf)
 
+[Natalia_lupp_Armazenamento_de_dados.pdf](https://github.com/user-attachments/files/19824876/Natalia_lupp_Armazenamento_de_dados.pdf)
 
 
 ## Site em Produção - GitHub Pages
