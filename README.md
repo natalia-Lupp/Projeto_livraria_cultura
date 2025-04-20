@@ -1,4 +1,4 @@
-# Projeto_livraria_cultura
+[Natalia_lupp_decisoes_design_system.pdf](https://github.com/user-attachments/files/19824556/Natalia_lupp_decisoes_design_system.pdf)# Projeto_livraria_cultura
 Projeto para o segundo sementre do curso de TSI da utfpr para ensinar o desenvolvimento de paginas Web
 ### **Autor:** Natalia Rodrigues Lupp
 Este projeto tem como objetivo implementar progressivamente e de forma didática uma aplicação web inspirada na tradicional Livraria Cultura localizada em São Paulo
@@ -6,18 +6,21 @@ Este projeto tem como objetivo implementar progressivamente e de forma didática
 O frontend da aplicação foi desenvolvido com HTML, CSS e JavaScript e o backend foi simulado pela implementação de uma API Fake, usando o JSON Server.
 
 ## Design das Telas - Figma: 
-https://www.figma.com/design/g9iGwfOHeHWNfYg65KNpr0/Projeto_livraria?t=u3duqzVCKgCsL9Gu-0
+https://www.figma.com/design/g9iGwfOHeHWNfYg65KNpr0/Projeto_livraria?node-id=0-1&p=f&t=wgOxMKRZf1vM6AGc-0
 
 
 ## Design System: 
 Link para o PDF
 [Tema_do_projeto_Natalia_lupp.pdf](https://github.com/user-attachments/files/19728128/Tema_do_projeto_Natalia_lupp.pdf)
+[Natalia_lupp_decisoes_design_system.pdf](https://github.com/user-attachments/files/19824558/Natalia_lupp_decisoes_design_system.pdf)
+
+
 
 ## Site em Produção - GitHub Pages
 https://github.com/natalia-Lupp/Projeto_livraria_cultura
 
 ## Framework CSS
-**nome do framework**
+Bootstrap:  https://getbootstrap.com/
 
 ## Dependências JavaScript
 - **JQuery** - Para realizar animações.
