@@ -1,0 +1,28 @@
+{
+  "name": "projeto_livraria_cultura",
+  "version": "1.0.0",
+  "description": "[Natalia_lupp_decisoes_design_system.pdf](https://github.com/user-attachments/files/19824556/Natalia_lupp_decisoes_design_system.pdf)# Projeto_livraria_cultura\r Projeto para o segundo sementre do curso de TSI da utfpr para ensinar o desenvolvimento de paginas Web\r ### **Autor:** Natalia Rodrigues Lupp\r Este projeto tem como objetivo implementar progressivamente e de forma didática uma aplicação web inspirada na tradicional Livraria Cultura localizada em São Paulo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/natalia-Lupp/Projeto_livraria_cultura.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/natalia-Lupp/Projeto_livraria_cultura/issues"
+  },
+  "homepage": "https://github.com/natalia-Lupp/Projeto_livraria_cultura#readme",
+  "dependencies": {
+    "jquery": "^3.7.1",
+    "xyz": "^5.0.0"
+  },
+  "devDependencies": {
+    "abc": "^0.6.1",
+    "gh-pages": "^6.3.0"
+  }
+}
