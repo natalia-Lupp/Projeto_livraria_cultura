@@ -1,11 +1,11 @@
 
-  body {
+body {
   background-image: url('../img/fundo_login.png');
   background-repeat: no-repeat;
-  background-position: left bottom;
-  background-size: 100% auto; /* mudar para 'contain' se quiser preservar tudo */
+  background-size: cover;           /* ou 'cover' se quiser preencher a tela */
+  background-position: center center;    /* centraliza mais verticalmente */
+  background-attachment: fixed;       /* mantém a imagem parada */
   min-height: 100vh;
-
 }
 
 .texto_branco {
@@ -33,45 +33,40 @@ margin-left: 360px;
 }
 
 .btn-primary-custom {
-background-color: #17a2b8;
-width: 100%;
-padding: 15px;
-margin-bottom: 15px;
-border: none;
-}
-
-.btn-facebook {
-background-color: #3b5998;
-width: 48%;
-}
-
-.btn-chave {
-width: 48%;
-}
-
-.linha-login {
-border: none;
-border-top: 1px solid #575151; 
-width: 100%;
-margin: 0 auto 15px auto;
-}
-
-.btn-confirmar {
-  background-color: #17a2b8;
-  padding: 6px 20px;
+ background-color: #17a2b8;
   border: none;
 }
 
-.tela-centralizada{
-max-width: 570px;
-margin: 100px auto;
-padding: 40px;
-text-align: center;
-margin-left: 325px; 
+.btn-primary-custom:hover {
+      background-color: #138496;
+    }
+
+.btn-facebook {
+background-color: #3b5998;
+
 }
 
-.email-input {
-  width: 600px;
-  max-width: 100%;
+.btn-facebook:hover {
+background-color: #2d4373;
+color: white;
 }
+
+
+   .btn-info-custom {
+      background-color: #17a2b8;
+      border: none;
+    }
+    .btn-info-custom:hover {
+      background-color: #138496;
+      color: white;
+    }
+
+.linha-login {
+  border-top: 1px solid #575151;
+      width: 100%;
+      margin: 0 auto 15px;
+}
+
+
+
 

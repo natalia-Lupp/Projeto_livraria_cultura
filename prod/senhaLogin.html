@@ -10,43 +10,38 @@
 
 </head>
 <body>
-  <div class="tela-centralizada">
-  <div class="container">
-    <h4 class="mb-3 text-muted text-bold text-center">CADASTRAR NOVA SENHA</h4>
-    <hr class="linha-login mx-auto my-4">
+  <div class="container d-flex flex-column justify-content-center align-items-center" style="min-height: 100vh; max-width: 450px;">
+    <h4 class="mb-3 text-center text-muted fw-bold w-100">CADASTRAR NOVA SENHA</h4>
+    <hr class="linha-login" />
 
-    <div class="text-start">
-      <div class="mb-3">
-        <label for="novaSenha" class="form-label">Nova Senha</label>
-        <input type="password" class="form-control" id="novaSenha" placeholder="Digite sua nova senha">
+    <form class="w-100">
+      <div class="mb-3 text-start">
+        <label for="novaSenha" class="form-label fw-bold">Nova Senha</label>
+        <input type="password" class="form-control" id="novaSenha" placeholder="Digite sua nova senha"/>
       </div>
 
-      <div class="mb-3">
-        <label for="confirmarSenha" class="form-label">Confirmar senha</label>
-        <input type="password" class="form-control" id="confirmarSenha" placeholder="Digite a senha novamente">
+      <div class="mb-3 text-start">
+        <label for="confirmarSenha" class="form-label fw-bold">Confirmar senha</label>
+        <input type="password" class="form-control" id="confirmarSenha" placeholder="Digite a senha novamente"/>
       </div>
 
-      <div class="mb-4">
-        <span class="texto_cinza_claro text-bold">Sua senha deve ter:</span>
-        <ul class="mb-0 ps-3">
+      <div class="mb-4 text-start text-secondary fw-semibold">
+        Sua senha deve ter:
+        <ul class="ps-3 mb-0">
           <li>Mínimo de 8 caracteres</li>
           <li>1 número</li>
           <li>1 letra minúscula</li>
           <li>1 letra maiúscula</li>
         </ul>
       </div>
-    </div>
 
-    <div class="row justify-content-between align-items-center mt-4 px-3">
-      <div class="col-auto">
-        <a href="login.html" class="text-decoration-none text-primary text-bold">
-          <i class="bi bi-arrow-left"></i> Voltar</a>
+      <div class="d-flex justify-content-between align-items-center px-0">
+        <a href="login.html" class="text-decoration-none text-primary fw-bold">
+          <i class="bi bi-arrow-left"></i> Voltar
+        </a>
+        <button type="submit" class="btn btn-info fw-bold text-white"> Cadastrar senha </button>
       </div>
-      <div class="col-auto">
-        <a href="#" class="btn btn-info texto_branco text-bold">Cadastrar senha</a>
-      </div>
-    </div>
+    </form>
   </div>
-</div>
 </body>
 </html>
