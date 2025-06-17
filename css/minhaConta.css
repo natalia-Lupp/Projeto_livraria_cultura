@@ -1,0 +1,62 @@
+    .texto_azul{
+    color: #00A8B4;
+    }
+    
+    .top-bar {
+      background-color: #00A8B4;
+      color: white;
+      padding: 10px 0;
+    }
+    .search-bar input {
+      border-radius: 0;
+    }
+    .sub-bar {
+      background-color: #0097A7;
+      color: white;
+      font-size: 0.875rem;
+    }
+    .sub-bar a {
+      color: white;
+      text-decoration: none;
+      padding: 0 10px;
+    }
+    .nav-categories {
+      background-color: #f8f9fa;
+      font-size: 0.9rem;
+    }
+    .nav-categories a {
+      color: #333;
+      text-decoration: none;
+      margin-right: 15px;
+    }
+    .cart-badge {
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 0.7rem;
+      background: red;
+      color: white;
+      border-radius: 50%;
+      padding: 2px 6px;
+    }
+
+.nome-site {
+  white-space: nowrap;
+}
+.search-bar {
+  width: 100%;
+}
+
+.search-bar select.filtro-site {
+  max-width: 150px;
+  min-width: 120px;
+  border-radius: 0;
+}
+
+.search-bar input.campo-pesquisa {
+  border-radius: 0;
+}
+
+.search-bar .btn {
+  border-radius: 0;
+}
