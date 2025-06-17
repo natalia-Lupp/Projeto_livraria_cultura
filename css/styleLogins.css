@@ -1,10 +1,11 @@
 
   body {
-  background-image: url('img/fundo_login.png');
+  background-image: url('../img/fundo_login.png');
   background-repeat: no-repeat;
   background-position: left bottom;
-  background-size: 100% auto; /* ou 'contain' se quiser preservar tudo */
+  background-size: 100% auto; /* mudar para 'contain' se quiser preservar tudo */
   min-height: 100vh;
+
 }
 
 .texto_branco {
@@ -12,7 +13,7 @@ color: white;
 }
 
 .texto_cinza {
-color: rgb(73, 73, 73);
+color: rgb(128, 119, 119);
 }
 
 .text-bold {
@@ -24,6 +25,7 @@ max-width: 500px;
 margin: 100px auto;
 padding: 40px;
 text-align: center;
+margin-left: 360px; 
 }
 
 .btn-primary-custom {
@@ -45,7 +47,27 @@ width: 48%;
 
 .linha-login {
 border: none;
-border-top: 1px solid #727070; 
+border-top: 1px solid #575151; 
 width: 100%;
 margin: 0 auto 15px auto;
 }
+
+.btn-confirmar {
+  background-color: #17a2b8;
+  padding: 6px 20px;
+  border: none;
+}
+
+.tela-centralizada{
+max-width: 570px;
+margin: 100px auto;
+padding: 40px;
+text-align: center;
+margin-left: 325px; 
+}
+
+.email-input {
+  width: 600px;
+  max-width: 100%;
+}
+
