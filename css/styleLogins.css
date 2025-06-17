@@ -16,6 +16,10 @@ color: white;
 color: rgb(128, 119, 119);
 }
 
+.texto_cinza_claro {
+color: rgb(160, 154, 154);
+}
+
 .text-bold {
   font-weight: bold;
 }
