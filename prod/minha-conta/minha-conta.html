@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
@@ -6,6 +7,10 @@
     <title>Livraria Cultura - Minha Conta</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../../css/minhaConta.css" />
@@ -75,7 +80,7 @@
     </div>
 
     <!-- Categorias -->
-    <div class="container-fluid nav-categories border-bottom">
+    <div class="container-fluid nav-categories border-bottom shadow">
       <div class="container d-flex align-items-center py-2">
         <i class="bi bi-list me-1 fs-4 text-info"></i>
         <select
@@ -103,132 +108,537 @@
       </div>
     </div>
 
-    <!--Corpo da Pagina-->
-
-    <!-- Cabeçalho da conta -->
-    <div class="container my-5">
-      <h2 class="mb-4 text-info">Minha Conta</h2>
+    <div class="container my-4">
+      <div class="d-flex align-items-center">
+        <h2 class="mb-2 me-4 text-info">Minha Conta</h2>
+        <div class="flex-grow-1 border-top border-2"></div>
+      </div>
     </div>
 
-    <div class="container mt-5">
-      <div class="row align-items-center mb-3">
-        <div class="col-md-2 d-flex align-items-center">
-          <img
-            src="https://via.placeholder.com/60"
-            class="rounded-circle me-2"
-          />
-          <span class="fw-medium fs-4">Olá!</span>
-        </div>
-        <div class="col-md-10">
-          <ul class="nav nav-tabs justify-content-start border-0">
-            <li class="nav-item">
+    <!--Corpo da Pagina-->
+    <div class="container mt-3 border border-2 rounded shadow p-4">
+      <div class="container mt-5">
+        <div
+          class="d-flex align-items-center justify-content-between flex-wrap"
+        >
+          <!-- Avatar + Nome -->
+          <div class="d-flex align-items-center flex-shrink-0 me-5">
+            <img
+              src="https://randomuser.me/api/portraits/men/1.jpg"
+              class="rounded-circle me-3 tm-img"
+              alt="Usuário genérico"
+            />
+            <div class="d-flex flex-column justify-content-center">
+              <span class="fw-medium fs-5 mb-0">Olá!</span>
+              <span class="fw-medium fs-5 mb-0">Fulano de Tal</span>
+            </div>
+          </div>
+
+          <!-- Abas -->
+          <ul class="nav nav-tabs flex-grow-1 border-0 ms-auto">
+            <li class="nav-item" role="presentation">
               <a
-                class="nav-link active border-bottom border-info text-dark fw-medium"
-                href="#"
+                class="nav-link active text-muted"
+                id="tab-dados-tab"
+                data-bs-toggle="tab"
+                href="#tab-dados"
+                role="tab"
+                aria-controls="tab-dados"
+                aria-selected="true"
                 >Dados pessoais</a
               >
             </li>
-            <li class="nav-item">
-              <a class="nav-link text-muted" href="#">Endereços</a>
+            <li class="nav-item" role="presentation">
+              <a
+                class="nav-link text-muted"
+                id="tab-enderecos-tab"
+                data-bs-toggle="modal"
+                data-bs-target="#modalEnderecos"
+                href="#"
+                role="tab"
+                aria-selected="false"
+                >Endereços</a
+              >
             </li>
-            <li class="nav-item">
-              <a class="nav-link text-muted" href="#">Autenticação</a>
+            <li class="nav-item" role="presentation">
+              <a
+                class="nav-link text-muted"
+                id="tab-auth-tab"
+                data-bs-toggle="tab"
+                href="#tab-auth"
+                role="tab"
+                aria-controls="tab-auth"
+                aria-selected="false"
+                >Autenticação</a
+              >
             </li>
-            <li class="nav-item">
-              <a class="nav-link text-muted" href="#">Meus Créditos</a>
+            <li class="nav-item" role="presentation">
+              <a
+                class="nav-link text-muted"
+                id="tab-cartoes-tab"
+                data-bs-toggle="tab"
+                href="#tab-cartoes"
+                role="tab"
+                aria-controls="tab-cartoes"
+                aria-selected="false"
+                >Cartões</a
+              >
             </li>
-            <li class="nav-item">
-              <a class="nav-link text-muted" href="#">Pedidos</a>
+            <li class="nav-item" role="presentation">
+              <a
+                class="nav-link text-muted"
+                id="tab-creditos-tab"
+                data-bs-toggle="tab"
+                href="#tab-creditos"
+                role="tab"
+                aria-controls="tab-creditos"
+                aria-selected="false"
+                >Meus Créditos</a
+              >
             </li>
-            <li class="nav-item">
+            <li class="nav-item" role="presentation">
+              <a
+                class="nav-link text-muted"
+                id="tab-pedidos-tab"
+                data-bs-toggle="tab"
+                href="#tab-pedidos"
+                role="tab"
+                aria-controls="tab-pedidos"
+                aria-selected="false"
+                >Pedidos</a
+              >
+            </li>
+            <li class="nav-item" role="presentation">
               <a class="nav-link text-muted" href="#">Sair</a>
             </li>
           </ul>
         </div>
       </div>
-    </div>
+      <!--dados pessoais-->
+      <div class="container my-5">
+        <h2 class="mb-4 fw-bolder">Dados pessoais</h2>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="border border-2 rounded p-4">
+              <div class="row g-3 fs-5 fw-medium">
+                <div class="col-md-6">
+                  <small class="text-muted">Nome</small>
+                  <p class="mb-0">-</p>
+                </div>
+                <div class="col-md-6">
+                  <small class="text-muted">Sobrenome</small>
+                  <p class="mb-0">-</p>
+                </div>
 
-    <div class="container my-5">
-      <h2 class="mb-4">Dados pessoais</h2>
-      <div class="row">
-        <div class="col-md-8">
-          <div class="row g-3 fs-5">
-            <div class="col-md-6">
-              <small class="text-muted">Nome</small>
-              <p class="mb-0">-</p>
-            </div>
-            <div class="col-md-6">
-              <small class="text-muted">Sobrenome</small>
-              <p class="mb-0">-</p>
-            </div>
+                <div class="col-md-6">
+                  <small class="text-muted">Data de nascimento</small>
+                  <p class="mb-0">-</p>
+                </div>
+                <div class="col-md-6">
+                  <small class="text-muted">Gênero</small>
+                  <p class="mb-0">-</p>
+                </div>
 
-            <div class="col-md-6">
-              <small class="text-muted">Data de nascimento</small>
-              <p class="mb-0">-</p>
-            </div>
-            <div class="col-md-6">
-              <small class="text-muted">Gênero</small>
-              <p class="mb-0">-</p>
-            </div>
+                <div class="col-md-6">
+                  <small class="text-muted">Email</small>
+                  <p class="mb-0 text-muted">fulano_d_tal@gmail.com</p>
+                </div>
+                <div class="col-md-6">
+                  <small class="text-muted">Telefone</small>
+                  <p class="mb-0">-</p>
+                </div>
 
-            <div class="col-md-6">
-              <small class="text-muted">Email</small>
-              <p class="mb-0 text-muted">fulano_d_tal@gmail.com</p>
-            </div>
-            <div class="col-md-6">
-              <small class="text-muted">Telefone</small>
-              <p class="mb-0">-</p>
-            </div>
+                <div class="col-md-6">
+                  <small class="text-muted">CEP</small>
+                  <p class="mb-0 fw-bold">-</p>
+                </div>
+                <div class="col-md-6">
+                  <small class="text-muted">Cidade</small>
+                  <p class="mb-0">-</p>
+                </div>
 
-            <div class="col-md-6">
-              <small class="text-muted">CEP</small>
-              <p class="mb-0 fw-bold">-</p>
-            </div>
-            <div class="col-md-6">
-              <small class="text-muted">Cidade</small>
-              <p class="mb-0">-</p>
-            </div>
+                <div class="col-md-6">
+                  <small class="text-muted">Estado</small>
+                  <p class="mb-0">-</p>
+                </div>
+                <div class="col-md-6">
+                  <small class="text-muted">Endereço Principal</small>
+                  <p class="mb-0">-</p>
+                </div>
+              </div>
 
-            <div class="col-md-6">
-              <small class="text-muted">Estado</small>
-              <p class="mb-0">-</p>
-            </div>
-            <div class="col-md-6">
-              <small class="text-muted">Endereço Principal</small>
-              <p class="mb-0">-</p>
+              <!-- Botão alinhado à direita -->
+              <div class="text-end mt-4">
+                <a
+                  href="#"
+                  class="btn-outline-info btn-sm fw-bold fs-7"
+                  data-bs-toggle="modal"
+                  data-bs-target="#editarModal"
+                  >EDITAR</a
+                >
+              </div>
             </div>
           </div>
 
-          <div class="mt-4">
-            <a href="#" class="btn-outline-info btn-sm fw-bold fs-6">Editar</a>
+          <!-- Newsletter continua à direita, FORA da borda -->
+          <div class="col-md-4">
+            <div class="border border-2 rounded p-3">
+              <h6 class="text-muted">Newsletter</h6>
+              <p class="small text-muted mb-2">
+                Deseja receber e-mails com promoções?
+              </p>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="newsletterCheck"
+                />
+                <label class="form-check-label small" for="newsletterCheck">
+                  Quero receber e-mails com promoções.
+                </label>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
 
-        <div class="col-md-4">
-          <div class="border rounded p-3">
-            <h6 class="text-muted">Newsletter</h6>
-            <p class="small text-muted mb-2">
-              Deseja receber e-mails com promoções?
-            </p>
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="newsletterCheck"
-              />
-              <label class="form-check-label small" for="newsletterCheck">
-                Quero receber e-mails com promoções.
-              </label>
+      <!-- modal de teste editar dados-->
+      <!-- Modal de Edição -->
+      <div
+        class="modal fade"
+        id="editarModal"
+        tabindex="-1"
+        aria-labelledby="editarModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header border-0">
+              <h5 class="modal-title fw-bold" id="editarModalLabel">
+                Editar Dados Pessoais
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Fechar"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="nome" />
+                  </div>
+                  <div class="col-md-6">
+                    <label for="sobrenome" class="form-label">Sobrenome</label>
+                    <input type="text" class="form-control" id="sobrenome" />
+                  </div>
+                  <div class="col-md-6">
+                    <label for="nascimento" class="form-label"
+                      >Data de Nascimento</label
+                    >
+                    <input type="date" class="form-control" id="nascimento" />
+                  </div>
+                  <div class="col-md-6">
+                    <label for="genero" class="form-label">Gênero</label>
+                    <select id="genero" class="form-select">
+                      <option selected>Selecione</option>
+                      <option>Feminino</option>
+                      <option>Masculino</option>
+                      <option>Outro</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" />
+                  </div>
+                  <div class="col-md-6">
+                    <label for="telefone" class="form-label">Telefone</label>
+                    <input type="tel" class="form-control" id="telefone" />
+                  </div>
+                  <div class="col-md-4">
+                    <label for="cep" class="form-label">CEP</label>
+                    <input type="text" class="form-control" id="cep" />
+                  </div>
+                  <div class="col-md-4">
+                    <label for="cidade" class="form-label">Cidade</label>
+                    <input type="text" class="form-control" id="cidade" />
+                  </div>
+                  <div class="col-md-4">
+                    <label for="estado" class="form-label">Estado</label>
+                    <input type="text" class="form-control" id="estado" />
+                  </div>
+                  <div class="col-12">
+                    <label for="endereco" class="form-label"
+                      >Endereço Principal</label
+                    >
+                    <input type="text" class="form-control" id="endereco" />
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer border-0">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cancelar
+              </button>
+              <button type="submit" class="btn btn-info text-white">
+                Salvar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--modal de teste endereço-->
+      <!-- Modal Endereços -->
+      <div
+        class="modal fade"
+        id="modalEnderecos"
+        tabindex="-1"
+        aria-labelledby="modalEnderecosLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalEnderecosLabel">
+                Gerenciar Endereços
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Fechar"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>
+                Aqui você poderá visualizar e alterar seus endereços
+                cadastrados.
+              </p>
+              <!-- Aqui você pode inserir um formulário ou lista de endereços -->
+              <div class="mb-3">
+                <label class="form-label">Endereço atual</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  value="Rua Exemplo, 123"
+                  disabled
+                />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Adicionar novo endereço</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Digite seu novo endereço"
+                />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Fechar
+              </button>
+              <button type="button" class="btn btn-primary">Salvar</button>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Bootstrap Icons -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
+    <footer class="bg-white pt-4">
+      <!-- Rede Social -->
+      <div class="bg-info text-white py-2">
+        <div class="container d-flex justify-content-center gap-4 fs-5">
+          <span class="fw-bold">REDES SOCIAIS</span>
+          <i class="bi bi-facebook"></i>
+          <i class="bi bi-instagram"></i>
+          <i class="bi bi-youtube"></i>
+          <i class="bi bi-twitter-x"></i>
+        </div>
+      </div>
+
+      <!-- Conteúdo Principal do Rodapé -->
+      <div class="container py-4">
+        <div class="row text-start small text-muted">
+          <!-- Sobre a Cultura -->
+          <div class="col-md-2 mb-4">
+            <h6 class="text-info fw-bold">SOBRE A CULTURA</h6>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="text-muted text-decoration-none"
+                  >Quem somos</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none">Eventos</a>
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none"
+                  >Trabalhe conosco</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none"
+                  >Vale-presente</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none"
+                  >Recuperação Judicial</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Atendimento -->
+          <div class="col-md-2 mb-4">
+            <h6 class="text-info fw-bold">ATENDIMENTO AO CLIENTE</h6>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="text-muted text-decoration-none"
+                  >Entre em contato</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none"
+                  >Política de Privacidade</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none"
+                  >Entrega e devolução</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none"
+                  >Perguntas e respostas</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none"
+                  >Atendimento Kobo</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Serviços -->
+          <div class="col-md-2 mb-4">
+            <h6 class="text-info fw-bold">SERVIÇOS</h6>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="text-muted text-decoration-none"
+                  >Cultura Pass</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none"
+                  >Sebo Cultura</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none"
+                  >Teatro Cultura</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none"
+                  >Mais Cultura</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none"
+                  >Marketplace</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Formas de Pagamento -->
+          <div class="col-md-4 mb-4">
+            <h6 class="text-info fw-bold">FORMAS DE PAGAMENTO</h6>
+            <div class="mb-2">
+              <img
+                src="https://logodownload.org/wp-content/uploads/2017/03/visa-logo-1.png"
+                width="50"
+                alt="Visa"
+              />
+              <img
+                src="https://logodownload.org/wp-content/uploads/2014/07/mastercard-logo-4.png"
+                width="50"
+                alt="MasterCard"
+              />
+              <img
+                src="https://logodownload.org/wp-content/uploads/2018/10/elo-logo-1.png"
+                width="40"
+                alt="Elo"
+              />
+              <img
+                src="https://logodownload.org/wp-content/uploads/2019/09/amex-logo.png"
+                width="40"
+                alt="Amex"
+              />
+            </div>
+            <div>
+              <img
+                src="https://cdn.worldvectorlogo.com/logos/paypal-2.svg"
+                width="50"
+                alt="PayPal"
+              />
+              <img
+                src="https://seeklogo.com/images/B/boleto-logo-B42FAD0FF0-seeklogo.com.png"
+                width="50"
+                alt="Boleto"
+              />
+              <img
+                src="https://play-lh.googleusercontent.com/Nh0mZG0Ch8mY1D7UtKFu9RP9cV2jKXFOuuzYZrB8AO3RQCUYie0c3MzUCOWKjDgWcA=w240-h480-rw"
+                width="60"
+                alt="Pix"
+              />
+            </div>
+          </div>
+
+          <!-- Certificado -->
+          <div class="col-md-2 mb-4 text-center">
+            <h6 class="text-info fw-bold">CERTIFICADOS</h6>
+            <img
+              src="https://cdn.seloebit.com.br/img/certificado-ebit.png"
+              class="img-fluid"
+              alt="Selo Ebit"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Rodapé legal -->
+      <div class="bg-light py-3 border-top">
+        <div class="container text-center small text-muted">
+          <p class="mb-1">
+            Livraria Cultura, todos os direitos reservados. Copyright 2025
+          </p>
+          <p class="mb-0">
+            Av. Paulista, 2073, Térreo - Bela Vista, São Paulo - SP - Brasil -
+            CNPJ 00.000.000/0000-00
+          </p>
+          <p class="mb-0">
+            Os preços, condições de pagamento e valores de frete são válidos
+            exclusivamente para compras efetuadas neste site.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
