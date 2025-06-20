@@ -1,72 +1,37 @@
-
 body {
-  background-image: url('../img/fundo_login.png');
+  background-image: url("../img/fundo_login.png");
   background-repeat: no-repeat;
-  background-size: cover;           /* ou 'cover' se quiser preencher a tela */
-  background-position: center center;    /* centraliza mais verticalmente */
-  background-attachment: fixed;       /* mantém a imagem parada */
+  background-size: cover; /* ou 'cover' se quiser preencher a tela */
+  background-position: center center; /* centraliza mais verticalmente */
+  background-attachment: fixed;
   min-height: 100vh;
 }
 
-.texto_branco {
-color: white;
-}
-
-.texto_cinza {
-color: rgb(128, 119, 119);
-}
-
-.texto_cinza_claro {
-color: rgb(160, 154, 154);
-}
-
-.text-bold {
-  font-weight: bold;
-}
-
 .login-box {
-max-width: 500px;
-margin: 100px auto;
-padding: 40px;
-text-align: center;
-margin-left: 360px; 
+  max-width: 500px;
+  margin: 100px auto;
+  padding: 40px;
+  text-align: center;
+  margin-left: 360px;
 }
-
-.btn-primary-custom {
- background-color: #17a2b8;
-  border: none;
-}
-
-.btn-primary-custom:hover {
-      background-color: #138496;
-    }
 
 .btn-facebook {
-background-color: #3b5998;
-
+  background-color: #3b5998;
 }
 
 .btn-facebook:hover {
-background-color: #2d4373;
-color: white;
+  background-color: #2d4373;
 }
 
-
-   .btn-info-custom {
-      background-color: #17a2b8;
-      border: none;
-    }
-    .btn-info-custom:hover {
-      background-color: #138496;
-      color: white;
-    }
+.btn-info-custom {
+  background-color: #17a2b8;
+}
+.btn-info-custom:hover {
+  background-color: #138496;
+}
 
 .linha-login {
-  border-top: 1px solid #575151;
-      width: 100%;
-      margin: 0 auto 15px;
+  border-top: 1px solid;
+  width: 100%;
+  margin: 0 auto 15px;
 }
-
-
-
-

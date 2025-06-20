@@ -11,7 +11,7 @@
       border-radius: 0;
     }
     .sub-bar {
-      background-color: #0097A7;
+      background-color: #00A8B4;;
       color: white;
       font-size: 0.875rem;
     }
@@ -60,3 +60,18 @@
 .search-bar .btn {
   border-radius: 0;
 }
+
+.text-custom-info {
+  color: #17a2b8 !important;
+}
+
+.select-compras {
+  width: auto;
+  background-color: transparent;
+}
+
+  .select-compras:focus {
+    outline: none;
+    box-shadow: none !important;
+    border-color: transparent !important;
+  }
