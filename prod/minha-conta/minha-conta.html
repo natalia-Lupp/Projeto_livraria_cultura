@@ -13,19 +13,20 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../../css/minhaConta.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
   </head>
   <body>
-    <div class="container-fluid top-bar">
+    <div class="container-fluid bg-info text-white py-2">
       <div class="container d-flex justify-content-between align-items-center">
         <!-- Logo + Busca -->
         <div class="d-flex align-items-center flex-grow-1 me-4">
-          <h1 class="mb-0 me-4 nome-site text-white">livraria cultura</h1>
+          <h1 class="mb-0 me-4 text-nowrap text-white">livraria cultura</h1>
           <div
             class="input-group search-bar flex-grow-1"
             style="max-width: 600px"
           >
             <select
-              class="form-select filtro-site"
+              class="form-select filtro-site rounded-0 shadow-none"
               aria-label="Filtro de busca"
             >
               <option selected>TODO O SITE</option>
@@ -41,10 +42,10 @@
             </select>
             <input
               type="text"
-              class="form-control campo-pesquisa"
+              class="form-control campo-pesquisa rounded-0 shadow-none"
               placeholder="Buscar na Livraria Cultura"
             />
-            <button class="btn btn-light">
+            <button class="btn btn-light rounded-0 shadow-none">
               <i class="bi bi-search"></i>
             </button>
           </div>
@@ -52,40 +53,51 @@
 
         <!-- Ícones usuário + carrinho -->
         <div class="d-flex align-items-center">
-          <i class="bi bi-person-circle fs-3 me-2"></i>
+          <i class="bi bi-person-circle fs-3 me-2 text-secondary"></i>
           <div>
-            <div>Olá "nome do usuario aqui"</div>
-            <small>Minha conta</small>
+            <div class="fw-medium">Olá "nome do usuario aqui"</div>
+            <small class="fw-medium">Minha conta</small>
           </div>
           <div class="position-relative ms-4">
-            <i class="bi bi-cart fs-3"></i>
-            <span class="cart-badge">0</span>
+            <i class="bi bi-cart fs-2"></i>
+            <span class="cart-badge bg-danger text-white">0</span>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Sub-barra -->
-    <div class="container-fluid sub-bar">
+    <div class="container-fluid sub-bar bg-info text-white">
       <div class="container d-flex justify-content-center py-1">
-        <a href="#">Atendimento e Televendas</a>
-        <span>|</span>
-        <a href="#">Atendimento Empresas</a>
-        <span>|</span>
-        <a href="#">Sebo Cultura</a>
-        <span>|</span>
-        <a href="#">Cultura Pass</a>
+        <a href="#" class="me-3 text-white text-decoration-none fs-6"
+          >Atendimento e Televendas</a
+        >
+        <span class="me-3 text-white">|</span>
+        <a href="#" class="me-3 text-white text-decoration-none fs-6"
+          >Atendimento Empresas</a
+        >
+        <span class="me-3">|</span>
+        <a href="#" class="me-3 text-white text-decoration-none fs-6"
+          >Sebo Cultura</a
+        >
+        <span class="me-3">|</span>
+        <a href="#" class="me-3 text-white text-decoration-none fs-6"
+          >Cultura Pass</a
+        >
       </div>
     </div>
 
     <!-- Categorias -->
-    <div class="container-fluid nav-categories border-bottom shadow">
+    <div
+      id="categoriasBar"
+      class="container-fluid bg-light border-bottom shadow-sm small"
+    >
       <div class="container d-flex align-items-center py-2">
-        <i class="bi bi-list me-1 fs-4 text-info"></i>
+        <i class="bi bi-list me-3 fs-4 text-info"></i>
         <select
-          class="form-select form-select-sm border-0 text-info fw-bold me-4 p-0 select-compras"
+          class="form-select form-select-sm border-0 text-info fw-bold p-0 w-auto bg-transparent focus-ring-0 me-3"
         >
-          <option selected disabled>Compre por categoria</option>
+          <option selected disabled class="">Compre por categoria</option>
           <option value="livros">Livros</option>
           <option value="ebooks">eBooks</option>
           <option value="infantil">Infantil</option>
@@ -95,21 +107,29 @@
           <option value="vendas">&#xF618; Atendimento de vendas</option>
         </select>
 
-        <a href="#">Literatura Brasileira</a>
-        <a href="#">Literatura Internacional</a>
-        <a href="#">Infanto juvenil</a>
-        <a href="#">Auto ajuda</a>
-        <a href="#">Biografias</a>
-        <a href="#">HQs</a>
-        <a href="#">Negócios</a>
-        <a href="#">Novidades</a>
-        <a href="#">Mais Vendidos</a>
+        <a href="#" class="me-3 text-muted text-decoration-none"
+          >Literatura Brasileira</a
+        >
+        <a href="#" class="me-3 text-muted text-decoration-none"
+          >Literatura Internacional</a
+        >
+        <a href="#" class="me-3 text-muted text-decoration-none"
+          >Infanto juvenil</a
+        >
+        <a href="#" class="me-3 text-muted text-decoration-none">Auto ajuda</a>
+        <a href="#" class="me-3 text-muted text-decoration-none">Biografias</a>
+        <a href="#" class="me-3 text-muted text-decoration-none">HQs</a>
+        <a href="#" class="me-3 text-muted text-decoration-none">Negócios</a>
+        <a href="#" class="me-3 text-muted text-decoration-none">Novidades</a>
+        <a href="#" class="me-3 text-muted text-decoration-none"
+          >Mais Vendidos</a
+        >
       </div>
     </div>
 
     <div class="container my-4">
       <div class="d-flex align-items-center">
-        <h2 class="mb-2 me-4 text-info">Minha Conta</h2>
+        <h2 class="mb-2 me-4 text-dark">Minha Conta</h2>
         <div class="flex-grow-1 border-top border-2"></div>
       </div>
     </div>
@@ -124,7 +144,7 @@
           <div class="d-flex align-items-center flex-shrink-0 me-5">
             <img
               src="https://randomuser.me/api/portraits/men/1.jpg"
-              class="rounded-circle me-3 tm-img"
+              class="rounded-circle me-3 tm-img bg-secondary"
               alt="Usuário genérico"
             />
             <div class="d-flex flex-column justify-content-center">
@@ -240,7 +260,7 @@
 
                 <div class="col-md-6">
                   <small class="text-muted">Email</small>
-                  <p class="mb-0 text-muted">fulano_d_tal@gmail.com</p>
+                  <p class="mb-0 small text-muted">fulano_d_tal@gmail.com</p>
                 </div>
                 <div class="col-md-6">
                   <small class="text-muted">Telefone</small>
@@ -270,7 +290,7 @@
               <div class="text-end mt-4">
                 <a
                   href="#"
-                  class="btn-outline-info btn-sm fw-bold fs-7"
+                  class="btn-outline-info btn-sm fw-bold small text-info rounded-pill"
                   data-bs-toggle="modal"
                   data-bs-target="#editarModal"
                   >EDITAR</a
@@ -292,7 +312,10 @@
                   type="checkbox"
                   id="newsletterCheck"
                 />
-                <label class="form-check-label small" for="newsletterCheck">
+                <label
+                  class="form-check-label small text-secondary"
+                  for="newsletterCheck"
+                >
                   Quero receber e-mails com promoções.
                 </label>
               </div>
@@ -302,7 +325,6 @@
       </div>
 
       <!-- modal de teste editar dados-->
-      <!-- Modal de Edição -->
       <div
         class="modal fade"
         id="editarModal"
@@ -417,7 +439,7 @@
               ></button>
             </div>
             <div class="modal-body">
-              <p>
+              <p class="small">
                 Aqui você poderá visualizar e alterar seus endereços
                 cadastrados.
               </p>
@@ -456,7 +478,6 @@
     </div>
 
     <footer class="bg-white pt-4">
-      <!-- Rede Social -->
       <div class="bg-info text-white py-2">
         <div class="container d-flex justify-content-start gap-4 fs-5">
           <span class="fw-bold me-3">REDES SOCIAIS</span>
@@ -467,10 +488,8 @@
         </div>
       </div>
 
-      <!-- Conteúdo Principal do Rodapé -->
       <div class="container py-4">
         <div class="row text-start small text-muted">
-          <!-- Sobre a Cultura -->
           <div class="col-md-2 mb-4">
             <h6 class="text-info fw-bold">SOBRE A CULTURA</h6>
             <ul class="list-unstyled">
@@ -502,7 +521,6 @@
             </ul>
           </div>
 
-          <!-- Atendimento -->
           <div class="col-md-2 mb-4">
             <h6 class="text-info fw-bold">ATENDIMENTO AO CLIENTE</h6>
             <ul class="list-unstyled">
@@ -534,7 +552,6 @@
             </ul>
           </div>
 
-          <!-- Serviços -->
           <div class="col-md-2 mb-4">
             <h6 class="text-info fw-bold">SERVIÇOS</h6>
             <ul class="list-unstyled">
@@ -566,7 +583,6 @@
             </ul>
           </div>
 
-          <!-- Formas de Pagamento -->
           <div class="col-md-4 mb-4">
             <h6 class="text-info fw-bold">FORMAS DE PAGAMENTO</h6>
             <div class="mb-2">
@@ -637,7 +653,6 @@
             </div>
           </div>
 
-          <!-- Certificado -->
           <div class="col-md-2 mb-4 text-center">
             <h6 class="text-info fw-bold">CERTIFICADOS</h6>
             <img
@@ -649,7 +664,6 @@
         </div>
       </div>
 
-      <!-- Rodapé legal -->
       <div class="bg-light py-3 border-top">
         <div class="container text-center small text-muted">
           <p class="mb-1">
