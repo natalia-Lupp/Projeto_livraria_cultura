@@ -3,3 +3,7 @@
   height: 110px;
   object-fit: cover;
 }
+
+.tanho-navbar {
+  max-width: 600px;
+}

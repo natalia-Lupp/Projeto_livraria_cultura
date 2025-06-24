@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Livraria Cultura - Minha Conta</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/minhaConta.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+  </head>
+  <body>
+    <div class="container-fluid bg-info text-white py-2">
+      <div class="container d-flex justify-content-between align-items-center">
+        <!-- Logo + Busca -->
+        <div class="d-flex align-items-center flex-grow-1 me-4">
+          <h1 class="mb-0 me-4 text-nowrap text-white">livraria cultura</h1>
+          <div
+            class="input-group search-bar flex-grow-1"
+            style="max-width: 600px"
+          >
+            <select
+              class="form-select filtro-site rounded-0 shadow-none"
+              aria-label="Filtro de busca"
+            >
+              <option selected>TODO O SITE</option>
+              <option value="livros">Livros</option>
+              <option value="filmes">Filmes</option>
+              <option value="ebooks">eBooks</option>
+              <option value="musica">Música</option>
+              <option value="papelaria">Papelaria & Etc</option>
+              <option value="brinquedos">Brinquedos</option>
+              <option value="geek">Geek</option>
+              <option value="kobo">Kobo</option>
+              <option value="cultura">Cultura em curso</option>
+            </select>
+            <input
+              type="text"
+              class="form-control campo-pesquisa rounded-0 shadow-none"
+              placeholder="Buscar na Livraria Cultura"
+            />
+            <button class="btn btn-light rounded-0 shadow-none">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Ícones usuário + carrinho -->
+        <div class="d-flex align-items-center">
+          <i class="bi bi-person-circle fs-3 me-2 text-secondary"></i>
+          <div>
+            <div class="fw-medium">Olá "nome do usuario aqui"</div>
+            <select
+              class="form-select form-select-sm border-0 bg-transparent text-white fw-medium p-0 shadow-none"
+              style="width: auto"
+            >
+              <option selected>Minha conta</option>
+              <option value="pedidos">Meus pedidos</option>
+              <option value="ebooks">Meus eBooks</option>
+              <option value="pontos">Meus pontos +Cultura</option>
+              <option value="conta">Minha conta</option>
+              <option value="desejos">Lista de desejos</option>
+              <option value="sair">Sair</option>
+            </select>
+          </div>
+          <div class="position-relative ms-4">
+            <i class="bi bi-cart fs-2"></i>
+            <span class="cart-badge bg-danger text-white">0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sub-barra -->
+    <div class="container-fluid sub-bar bg-info text-white">
+      <div class="container d-flex justify-content-center py-1">
+        <a href="#" class="me-3 text-white text-decoration-none fs-6"
+          >Atendimento e Televendas</a
+        >
+        <span class="me-3 text-white">|</span>
+        <a href="#" class="me-3 text-white text-decoration-none fs-6"
+          >Atendimento Empresas</a
+        >
+        <span class="me-3">|</span>
+        <a href="#" class="me-3 text-white text-decoration-none fs-6"
+          >Sebo Cultura</a
+        >
+        <span class="me-3">|</span>
+        <a href="#" class="me-3 text-white text-decoration-none fs-6"
+          >Cultura Pass</a
+        >
+      </div>
+    </div>
+
+    <!-- Categorias -->
+    <div
+      id="categoriasBar"
+      class="container-fluid bg-light border-bottom shadow-sm small"
+    >
+      <div class="container d-flex align-items-center py-2">
+        <i class="bi bi-list me-3 fs-4 text-info"></i>
+        <select
+          class="form-select form-select-sm border-0 text-info fw-bold p-0 w-auto bg-transparent focus-ring-0 me-3"
+        >
+          <option selected disabled class="">Compre por categoria</option>
+          <option value="livros">Livros</option>
+          <option value="ebooks">eBooks</option>
+          <option value="infantil">Infantil</option>
+          <option value="outras">Outras categorias</option>
+          <option value="vale-presente">Vale-presente</option>
+          <option value="cultura-pass">Cultura Pass</option>
+          <option value="vendas">&#xF618; Atendimento de vendas</option>
+        </select>
+
+        <a href="#" class="me-3 text-muted text-decoration-none"
+          >Literatura Brasileira</a
+        >
+        <a href="#" class="me-3 text-muted text-decoration-none"
+          >Literatura Internacional</a
+        >
+        <a href="#" class="me-3 text-muted text-decoration-none"
+          >Infanto juvenil</a
+        >
+        <a href="#" class="me-3 text-muted text-decoration-none">Auto ajuda</a>
+        <a href="#" class="me-3 text-muted text-decoration-none">Biografias</a>
+        <a href="#" class="me-3 text-muted text-decoration-none">HQs</a>
+        <a href="#" class="me-3 text-muted text-decoration-none">Negócios</a>
+        <a href="#" class="me-3 text-muted text-decoration-none">Novidades</a>
+        <a href="#" class="me-3 text-muted text-decoration-none"
+          >Mais Vendidos</a
+        >
+      </div>
+    </div>
+
+    <div class="container py-5">
+      <div class="row">
+        <!-- Capa do Livro -->
+        <div class="col-md-3 text-center">
+          <img
+            src="caminho/para/imagem-livro.jpg"
+            class="img-fluid mb-3"
+            alt="Capa do livro A Biblioteca da Meia-Noite"
+          />
+          <span class="badge bg-danger">Livro Físico</span>
+          <p class="mt-2">
+            <strong>Editora:</strong> <a href="#">Bertrand Brasil</a>
+          </p>
+        </div>
+
+        <!-- Informações do Produto -->
+        <div class="col-md-6">
+          <h3 class="mb-3">A BIBLIOTECA DA MEIA-NOITE</h3>
+
+          <div class="border p-3 bg-white">
+            <div class="d-flex justify-content-between">
+              <div>
+                <p><strong>Livraria Cultura</strong></p>
+                <p>R$ 59,90</p>
+              </div>
+              <div>
+                <p><strong>eBook</strong></p>
+                <p>R$ 31,90</p>
+              </div>
+            </div>
+            <h4 class="text-success">R$ 59,90</h4>
+            <button class="btn btn-warning w-100">ADICIONAR AO CARRINHO</button>
+          </div>
+
+          <!-- Calcular Frete -->
+          <div class="mt-3 border p-3 bg-white">
+            <form class="d-flex">
+              <input
+                type="text"
+                class="form-control me-2"
+                placeholder="00000-000"
+              />
+              <button class="btn btn-secondary" type="submit">OK</button>
+            </form>
+            <small class="text-muted"
+              >Calcule o valor do frete e prazo de entrega para a sua
+              região</small
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Sobre o Livro -->
+      <hr class="my-5" />
+      <div class="row">
+        <h3 class="mb-4">Sobre o Livro</h3>
+            <table class="table table-bordered">
+            <tbody>
+              <tr>
+                <th class="bg-light">Autor</th>
+                <td>MIH TANINO</td>
+              </tr>
+                <tr>
+                <th class="bg-light">Ano</th>
+                <td>2025</td>
+              </tr>
+              <tr>
+                <th class="bg-light">Edição</th>
+                <td>1</td>
+              </tr>
+              <tr>
+                <th class="bg-light">Origem</th>
+                <td>NACIONAL</td>
+              </tr>
+               <tr>
+                <th class="bg-light">Idioma</th>
+                <td>PORTUGUÊS</td>
+              </tr>
+              <tr>
+                <th class="bg-light">País</th>
+                <td>BRASIL</td>
+              </tr>
+              <tr>
+               </tbody>
+          </table>
+        </div>
+        <div class="col-md-4">
+        <div class="col-md-12 mt-3">
+          <p><strong>Sinopse:</strong></p>
+        </div>
+      </div>
+      <!-- Detalhes do Produto -->
+      <hr class="my-5" />
+      <div class="container">
+        <h4 class="mb-4">Detalhes do Produto</h4>
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <tbody>
+             <th class="bg-light">EAN</th>
+                <td>9788593448888</td>
+              </tr>
+              <tr>
+                <th class="bg-light">ISBN</th>
+                <td>8593448887</td>
+              </tr>
+              <tr>
+                <th class="bg-light">Formato</th>
+                <td>LIVRO</td>
+              </tr>
+              <tr>
+                <th class="bg-light">Encadernação</th>
+                <td>BROCHURA</td>
+              </tr>
+                <th class="bg-light">Páginas</th>
+                <td>48</td>
+              </tr>
+              <tr>
+                <th class="bg-light">Altura</th>
+                <td>25.5 Cm</td>
+              </tr>
+              <tr>
+                <th class="bg-light">Comprimento</th>
+                <td>1 Cm</td>
+              </tr>
+              <tr>
+                <th class="bg-light">Largura</th>
+                <td>20 Cm</td>
+              </tr>
+              <tr>
+                <th class="bg-light">Peso</th>
+                <td>0.2 Kg</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Avaliação dos Consumidores -->
+        <hr class="my-5" />
+        <div class="container">
+          <h4 class="mb-3">
+            Avaliação dos consumidores
+            <span class="ms-2 text-info">
+              <i class="bi bi-chat-dots-fill"></i>
+              <!-- Ícone de comentário (requer Bootstrap Icons) -->
+            </span>
+          </h4>
+          <p class="text-muted">Este produto ainda não possui avaliações.</p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-white pt-4">
+      <div class="bg-info text-white py-2">
+        <div class="container d-flex justify-content-start gap-4 fs-5">
+          <span class="fw-bold me-3">REDES SOCIAIS</span>
+          <i class="bi bi-facebook me-3"></i>
+          <i class="bi bi-instagram me-3"></i>
+          <i class="bi bi-youtube me-3"></i>
+          <i class="bi bi-tiktok me-3"></i>
+        </div>
+      </div>
+
+      <div class="container py-4">
+        <div class="row text-start small text-muted">
+          <div class="col-md-2 mb-4">
+            <h6 class="text-info fw-bold">SOBRE A CULTURA</h6>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="text-muted text-decoration-none fw-medium"
+                  >Quem somos</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none fw-medium"
+                  >Eventos</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none fw-medium"
+                  >Trabalhe conosco</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none fw-medium"
+                  >Vale-presente</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none fw-medium"
+                  >Recuperação Judicial</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 mb-4">
+            <h6 class="text-info fw-bold">ATENDIMENTO AO CLIENTE</h6>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="text-muted text-decoration-none fw-medium"
+                  >Entre em contato</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none fw-medium"
+                  >Política de Privacidade</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none fw-medium"
+                  >Entrega e devolução</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none fw-medium"
+                  >Perguntas e respostas</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none fw-medium"
+                  >Atendimento Kobo</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-2 mb-4">
+            <h6 class="text-info fw-bold">SERVIÇOS</h6>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="text-muted text-decoration-none fw-medium"
+                  >Cultura Pass</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none fw-medium"
+                  >Sebo Cultura</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none fw-medium"
+                  >Teatro Cultura</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none fw-medium"
+                  >Mais Cultura</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none fw-medium"
+                  >Marketplace</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <h6 class="text-info fw-bold">FORMAS DE PAGAMENTO</h6>
+            <div class="mb-2">
+              <img
+                src="https://logodownload.org/wp-content/uploads/2016/10/visa-logo-0.png"
+                width="50"
+                alt="Visa"
+              />
+              <img
+                src="https://logodownload.org/wp-content/uploads/2014/07/mastercard-logo-4.png"
+                width="50"
+                alt="MasterCard"
+              />
+              <img
+                src="https://logodownload.org/wp-content/uploads/2014/07/cielo-logo-0.png"
+                width="40"
+                alt="Elo"
+              />
+              <img
+                src="https://logodownload.org/wp-content/uploads/2015/03/hipercard-logo-0.png"
+                width="40"
+                alt="Amex"
+              />
+            </div>
+            <div>
+              <img
+                src="https://logodownload.org/wp-content/uploads/2014/10/paypal-logo-2.png"
+                width="50"
+                alt="PayPal"
+              />
+              <img
+                src="https://logodownload.org/wp-content/uploads/2019/09/boleto-logo-0.png"
+                width="50"
+                alt="Boleto"
+              />
+              <img
+                src="https://logodownload.org/wp-content/uploads/2020/02/pix-bc-logo-0.png"
+                width="60"
+                alt="Pix"
+              />
+            </div>
+            <div>
+              <img
+                src="https://logodownload.org/wp-content/uploads/2014/05/banco-do-brasil-logo-0.png"
+                width="50"
+                alt="PayPal"
+              />
+              <img
+                src="https://logodownload.org/wp-content/uploads/2014/05/itau-logo-0.png"
+                width="50"
+                alt="Boleto"
+              />
+              <img
+                src="https://logodownload.org/wp-content/uploads/2018/09/bradesco-logo-novo-2018.png"
+                width="40"
+                alt="Pix"
+              />
+              <img
+                src="https://logodownload.org/wp-content/uploads/2014/02/caixa-logo-0.png"
+                width="50"
+                alt="Pix"
+              />
+              <img
+                src="https://logodownload.org/wp-content/uploads/2017/05/santander-logo-1.png"
+                width="50"
+                alt="Pix"
+              />
+            </div>
+          </div>
+
+          <div class="col-md-2 mb-4 text-center">
+            <h6 class="text-info fw-bold">CERTIFICADOS</h6>
+            <img
+              src="/img/certificado.webp"
+              class="img-fluid"
+              alt="Selo Ebit"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-light py-3 border-top">
+        <div class="container text-center small text-muted">
+          <p class="mb-1">
+            Livraria Cultura, todos os direitos reservados. Copyright 2025
+          </p>
+          <p class="mb-0">
+            UTFPR - Av. Profª Laura Pacheco Bastos, 800 - Industrial, Guarapuava
+            - PR - Brasil - CNPJ 00.000.000/0000-00
+          </p>
+          <p class="mb-0">
+            Site criado como modelo de estudos universitario com base no site da
+            livraria cultura. Sem fins lucrativos.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

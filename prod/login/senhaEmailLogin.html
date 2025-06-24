@@ -66,11 +66,47 @@
           >
             <i class="bi bi-arrow-left"></i> Voltar
           </a>
-          <button type="submit" class="btn btn-info text-white fw-bold">
+          <button
+            type="button"
+            class="btn btn-info text-white fw-bold"
+            id="btnLogin"
+          >
             Entrar
           </button>
         </div>
       </form>
     </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#btnLogin").click(function () {
+          const emailDigitado = $("#email").val().trim();
+          const senhaDigitada = $("#senha").val().trim();
+
+          if (!emailDigitado || !senhaDigitada) {
+            alert("Por favor, preencha email e senha.");
+            return;
+          }
+
+          const dados = JSON.parse(localStorage.getItem("dadosUsuario"));
+
+          // Verificações
+          if (!dados) {
+            alert("Nenhum usuário encontrado.");
+            return;
+          }
+
+          const emailSalvo = dados.email;
+          const senhaSalva = dados.senha;
+
+          if (emailDigitado === emailSalvo && senhaDigitada === senhaSalva) {
+            // Sucesso → redireciona
+            window.location.href = "../minha-conta/minha-conta.html";
+          } else {
+            alert("Email ou senha incorretos.");
+          }
+        });
+      });
+    </script>
   </body>
 </html>

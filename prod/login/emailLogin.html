@@ -16,40 +16,50 @@
     />
     <link rel="stylesheet" href="../../css/styleLogins.css" />
   </head>
-  <body>
-    <div
-      class="d-flex justify-content-center align-items-center"
-      style="min-height: 100vh"
-    >
-      <div class="text-center" style="max-width: 570px; width: 100%">
-        <h4 class="mb-3 text-muted fw-bold">POR FAVOR INFORME SEU EMAIL</h4>
-        <hr class="linha-login text-secondary mx-auto my-4" />
+  <body class="bg-login d-flex justify-content-center align-items-center min-vh-100">
+    <div class="text-center w-100" style="max-width: 570px;">
+      <h4 class="mb-3 text-muted fw-bold">POR FAVOR INFORME SEU EMAIL</h4>
+      <hr class="linha-login text-secondary mx-auto my-4" />
 
-        <input
-          type="email"
-          class="form-control mx-auto"
-          style="max-width: 600px"
-          placeholder="Ex: jose@email.com"
-        />
+     <input
+  type="email"
+  class="form-control mx-auto input-max-width"
+  placeholder="Ex: jose@email.com"
+  id="emailInput"
+/>
 
-        <div
-          class="d-flex justify-content-between align-items-center mt-4 px-3"
-          style="max-width: 600px; margin: 0 auto"
-        >
-          <a
-            href="login.html"
-            class="text-decoration-none text-primary fw-bold"
-          >
-            <i class="bi bi-arrow-left"></i> Voltar</a
-          >
-          <a
-            href="senhaLogin.html"
-            class="btn btn-info-custom text-white text-info fw-bold px-4 text-white"
-          >
-            Confirmar</a
-          >
-        </div>
-      </div>
+<div class="d-flex justify-content-between align-items-center mt-4 mx-auto px-3 button-container">
+  <a href="login.html" class="text-decoration-none text-primary fw-bold">
+    <i class="bi bi-arrow-left"></i> Voltar
+  </a>
+  <button type="button" class="btn btn-info-custom text-white fw-bold px-4" id="confirmarEmail">
+    Confirmar
+  </button>
+</div>
+
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $("#confirmarEmail").click(function () {
+      const email = $("#emailInput").val().trim();
+      const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+      if (!emailValido) {
+        $("#emailInput").addClass("is-invalid");
+        return;
+      }
+
+      $("#emailInput").removeClass("is-invalid");
+
+      // Atualiza dados existentes ou cria novos
+      const dadosAtuais = JSON.parse(localStorage.getItem("dadosUsuario")) || {};
+      dadosAtuais.email = email;
+      window.location.href = "senhaLogin.html";
+    });
+  });
+</script>
   </body>
 </html>
+

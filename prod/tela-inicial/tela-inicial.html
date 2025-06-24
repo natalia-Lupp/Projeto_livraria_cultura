@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Livraria Cultura - Tela Inicial</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/style.css" />
+  </head>
+  <body>
+    <div class="container-fluid bg-info text-white py-2">
+      <div class="container d-flex justify-content-between align-items-center">
+        <!-- Logo + Busca -->
+        <div class="d-flex align-items-center flex-grow-1 me-4">
+          <h1 class="mb-0 me-4 text-nowrap text-white">livraria cultura</h1>
+          <div
+            class="input-group search-bar flex-grow-1"
+            style="max-width: 600px"
+          >
+            <select
+              class="form-select filtro-site rounded-0 shadow-none"
+              aria-label="Filtro de busca"
+            >
+              <option selected>TODO O SITE</option>
+              <option value="livros">Livros</option>
+              <option value="filmes">Filmes</option>
+              <option value="ebooks">eBooks</option>
+              <option value="musica">Música</option>
+              <option value="papelaria">Papelaria & Etc</option>
+              <option value="brinquedos">Brinquedos</option>
+              <option value="geek">Geek</option>
+              <option value="kobo">Kobo</option>
+              <option value="cultura">Cultura em curso</option>
+            </select>
+            <input
+              type="text"
+              class="form-control campo-pesquisa rounded-0 shadow-none"
+              placeholder="Buscar na Livraria Cultura"
+            />
+            <button class="btn btn-light rounded-0 shadow-none">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Ícones usuário + carrinho -->
+        <div class="d-flex align-items-center">
+          <i class="bi bi-person-circle fs-3 me-2 text-secondary"></i>
+          <div>
+            <div class="fw-medium">Olá "nome do usuario aqui"</div>
+            <select
+              class="form-select form-select-sm border-0 bg-transparent text-white fw-medium p-0 shadow-none"
+              style="width: auto"
+            >
+              <option selected>Minha conta</option>
+              <option value="pedidos">Meus pedidos</option>
+              <option value="ebooks">Meus eBooks</option>
+              <option value="pontos">Meus pontos +Cultura</option>
+              <option value="conta">Minha conta</option>
+              <option value="desejos">Lista de desejos</option>
+              <option value="sair">Sair</option>
+            </select>
+          </div>
+          <div class="position-relative ms-4">
+            <i class="bi bi-cart fs-2"></i>
+            <span class="cart-badge bg-danger text-white">0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sub-barra -->
+    <div class="container-fluid sub-bar bg-info text-white">
+      <div class="container d-flex justify-content-center py-1">
+        <a href="#" class="me-3 text-white text-decoration-none fs-6"
+          >Atendimento e Televendas</a
+        >
+        <span class="me-3 text-white">|</span>
+        <a href="#" class="me-3 text-white text-decoration-none fs-6"
+          >Atendimento Empresas</a
+        >
+        <span class="me-3">|</span>
+        <a href="#" class="me-3 text-white text-decoration-none fs-6"
+          >Sebo Cultura</a
+        >
+        <span class="me-3">|</span>
+        <a href="#" class="me-3 text-white text-decoration-none fs-6"
+          >Cultura Pass</a
+        >
+      </div>
+    </div>
+
+    <!-- Categorias -->
+    <div
+      id="categoriasBar"
+      class="container-fluid bg-light border-bottom shadow-sm small"
+    >
+      <div class="container d-flex align-items-center py-2">
+        <i class="bi bi-list fs-5 text-info"></i>
+        <div class="dropdown">
+          <button
+            class="btn btn-sm bg-transparent border-0 text-info fw-bold dropdown-toggle me-4"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Compre por categoria
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Livros</a></li>
+            <li><a class="dropdown-item" href="#">eBooks</a></li>
+            <li><a class="dropdown-item" href="#">Infantil</a></li>
+            <li><a class="dropdown-item" href="#">Outras categorias</a></li>
+            <li><a class="dropdown-item" href="#">Vale-presente</a></li>
+            <li><a class="dropdown-item" href="#">Cultura Pass</a></li>
+            <li><a class="dropdown-item" href="#">Atendimento de vendas</a></li>
+          </ul>
+        </div>
+
+        <a href="#" class="me-3 text-muted text-decoration-none"
+          >Literatura Brasileira</a
+        >
+        <a href="#" class="me-3 text-muted text-decoration-none"
+          >Literatura Internacional</a
+        >
+        <a href="#" class="me-3 text-muted text-decoration-none"
+          >Infanto juvenil</a
+        >
+        <a href="#" class="me-3 text-muted text-decoration-none">Auto ajuda</a>
+        <a href="#" class="me-3 text-muted text-decoration-none">Biografias</a>
+        <a href="#" class="me-3 text-muted text-decoration-none">HQs</a>
+        <a href="#" class="me-3 text-muted text-decoration-none">Negócios</a>
+        <a href="#" class="me-3 text-muted text-decoration-none">Novidades</a>
+        <a href="#" class="me-3 text-muted text-decoration-none"
+          >Mais Vendidos</a
+        >
+      </div>
+    </div>
+
+    <!-- Banner topo -->
+<div class="container-fluid p-0">
+  <img src="banner-topo.jpg" class="img-fluid w-100" alt="Banner Cultura Pass">
+</div>
+
+<!-- Banners menores abaixo do principal -->
+<div class="container mt-3">
+  <div class="row g-2">
+    <div class="col-md-6">
+      <img src="vale-presente.jpg" class="img-fluid w-100" alt="Vale-Presente">
+    </div>
+    <div class="col-md-6">
+      <img src="cultura-pass-vantagens.jpg" class="img-fluid w-100" alt="Assine Cultura Pass">
+    </div>
+  </div>
+</div>
+
+<!-- Título seção -->
+<div class="container text-center mt-4 mb-4">
+  <h5 class="text-secondary">O que há de novo <strong>LIVROS DE COLORIR</strong></h5>
+</div>
+
+<!-- Cards de livros -->
+<div class="container mb-5">
+  <div class="row row-cols-1 row-cols-md-4 g-4">
+
+    <!-- Card 1 -->
+    <div class="col">
+      <div class="card h-100 text-center">
+        <img src="fisherprice.jpg" class="card-img-top" alt="Fisher Price Livro de Colorir">
+        <div class="card-body">
+          <small class="text-muted">Criança Cultura</small>
+          <h6 class="card-title">Fisher Price - Meu livrão de colorir</h6>
+          <p class="text-primary">R$ 9,90</p>
+          <a href="#" class="btn btn-outline-primary btn-sm">Comprar</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="col">
+      <div class="card h-100 text-center">
+        <img src="diasquentes.jpg" class="card-img-top" alt="Dias Quentes">
+        <div class="card-body">
+          <small class="text-muted">Harper Collins BR</small>
+          <h6 class="card-title">Dias Quentes (Spring Summer)</h6>
+          <p class="text-primary">R$ 39,90</p>
+          <a href="#" class="btn btn-outline-primary btn-sm">Comprar</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col">
+      <div class="card h-100 text-center">
+        <img src="cuteandcomfy.jpg" class="card-img-top" alt="Cute and Comfy">
+        <div class="card-body">
+          <small class="text-muted">Camelot</small>
+          <h6 class="card-title">Cute & Comfy - Livro de colorir</h6>
+          <p class="text-primary">R$ 29,90</p>
+          <a href="#" class="btn btn-outline-primary btn-sm">Comprar</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="col">
+      <div class="card h-100 text-center">
+        <img src="bluey.jpg" class="card-img-top" alt="Bluey com Adesivos">
+        <div class="card-body">
+          <small class="text-muted">Editora Online</small>
+          <h6 class="card-title">Bluey com 1.500 adesivos</h6>
+          <p class="text-primary">R$ 29,90</p>
+          <a href="#" class="btn btn-outline-primary btn-sm">Comprar</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Seção: Explore na Cultura -->
+<div class="container mt-5 text-center">
+  <h6 class="mb-3">Explore na Cultura</h6>
+  <div class="row justify-content-center g-3">
+    <div class="col-4 col-md-2">
+      <img src="explore-mais-vendidos.jpg" class="rounded-circle img-fluid" alt="Mais Vendidos">
+    </div>
+    <div class="col-4 col-md-2">
+      <img src="explore-lancamentos.jpg" class="rounded-circle img-fluid" alt="Lançamentos">
+    </div>
+    <div class="col-4 col-md-2">
+      <img src="explore-autora.jpg" class="rounded-circle img-fluid" alt="Colleen Hoover">
+    </div>
+  </div>
+</div>
+
+<!-- Seção: Destaques do mês -->
+<div class="container mt-5">
+  <h6 class="text-center mb-3">Destaques do mês</h6>
+  <div class="row g-3">
+    <div class="col-md-4">
+      <img src="banner-destaque-1.jpg" class="img-fluid w-100" alt="Destaque 1">
+    </div>
+    <div class="col-md-4">
+      <img src="banner-destaque-2.jpg" class="img-fluid w-100" alt="Destaque 2">
+    </div>
+    <div class="col-md-4">
+      <img src="banner-destaque-3.jpg" class="img-fluid w-100" alt="Destaque 3">
+    </div>
+  </div>
+</div>
+
+<!-- Seção: Mais vendidos Veja e Publishnews -->
+<div class="container mt-5 mb-5">
+  <h6 class="text-center mb-4">✓ Mais Vendidos da Veja e Publishnews</h6>
+  <div class="row row-cols-1 row-cols-md-4 g-4">
+
+    <!-- Livro 1 -->
+    <div class="col">
+      <div class="card h-100 text-center">
+        <img src="livro-mais-vendido-1.jpg" class="card-img-top" alt="Mais Esperto Que o Diabo">
+        <div class="card-body">
+          <small class="text-muted">COACH EDITORA</small>
+          <h6 class="card-title">Mais Esperto que o Diabo</h6>
+          <p class="text-primary">R$ 49,90</p>
+          <a href="#" class="btn btn-outline-primary btn-sm">Comprar</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Livro 2 -->
+    <div class="col">
+      <div class="card h-100 text-center">
+        <img src="livro-mais-vendido-2.jpg" class="card-img-top" alt="O Poder da Autorresponsabilidade">
+        <div class="card-body">
+          <small class="text-muted">GENTE</small>
+          <h6 class="card-title">O Poder da Autorresponsabilidade</h6>
+          <p class="text-primary">R$ 25,00</p>
+          <a href="#" class="btn btn-outline-primary btn-sm">Comprar</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Livro 3 -->
+    <div class="col">
+      <div class="card h-100 text-center">
+        <img src="livro-mais-vendido-3.jpg" class="card-img-top" alt="E Se Nada Der Certo">
+        <div class="card-body">
+          <small class="text-muted">BESTSELLER</small>
+          <h6 class="card-title">E Se Nada Der Certo...</h6>
+          <p class="text-primary">R$ 64,90</p>
+          <a href="#" class="btn btn-outline-primary btn-sm">Comprar</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Livro 4 -->
+    <div class="col">
+      <div class="card h-100 text-center">
+        <img src="livro-mais-vendido-4.jpg" class="card-img-top" alt="Verity">
+        <div class="card-body">
+          <small class="text-muted">COLLEEN HOOVER</small>
+          <h6 class="card-title">Verity</h6>
+          <p class="text-primary">R$ 59,90</p>
+          <a href="#" class="btn btn-outline-primary btn-sm">Comprar</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- Seção: Muito mais Cultura pra você -->
+<div class="container mt-5">
+  <h6 class="text-center mb-4">Muito mais Cultura pra você</h6>
+  <div class="row g-4 justify-content-center">
+    <div class="col-md-5">
+      <img src="banner-literatura.jpg" class="img-fluid w-100" alt="Mais Vendidos Literatura">
+    </div>
+    <div class="col-md-5">
+      <img src="banner-autoajuda.jpg" class="img-fluid w-100" alt="Mais Vendidos Autoajuda">
+    </div>
+  </div>
+</div>
+
+<!-- Seção: Para os pequenos -->
+<div class="container mt-5 mb-5">
+  <h6 class="text-center mb-4">Para os PEQUENOS</h6>
+  <div class="row row-cols-1 row-cols-md-4 g-4">
+
+    <!-- Livro 1 -->
+    <div class="col">
+      <div class="card h-100 text-center">
+        <img src="livro-pequeno-1.jpg" class="card-img-top" alt="Eu e o Meu Papai">
+        <div class="card-body">
+          <small class="text-muted">Criança Cultura</small>
+          <h6 class="card-title">Eu e o Meu Papai</h6>
+          <p class="text-primary">R$ 39,90</p>
+          <a href="#" class="btn btn-outline-primary btn-sm">Comprar</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Livro 2 -->
+    <div class="col">
+      <div class="card h-100 text-center">
+        <img src="livro-pequeno-2.jpg" class="card-img-top" alt="Mini Bíblia - Livro de Orações">
+        <div class="card-body">
+          <small class="text-muted">Todolivro</small>
+          <h6 class="card-title">Mini Bíblia - Meu Primeiro Livro de Orações</h6>
+          <p class="text-primary">R$ 1,90</p>
+          <a href="#" class="btn btn-outline-primary btn-sm">Comprar</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Livro 3 -->
+    <div class="col">
+      <div class="card h-100 text-center">
+        <img src="livro-pequeno-3.jpg" class="card-img-top" alt="Colorir: Seres do Mar">
+        <div class="card-body">
+          <small class="text-muted">Todoolivro</small>
+          <h6 class="card-title">Colorir: Seres do Mar</h6>
+          <p class="text-primary">R$ 2,90</p>
+          <a href="#" class="btn btn-outline-primary btn-sm">Comprar</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Livro 4 -->
+    <div class="col">
+      <div class="card h-100 text-center">
+        <img src="livro-pequeno-4.jpg" class="card-img-top" alt="O Gigante Mais Elegante">
+        <div class="card-body">
+          <small class="text-muted">Brinque Book</small>
+          <h6 class="card-title">O Gigante Mais Elegante da Cidade</h6>
+          <p class="text-primary">R$ 59,90</p>
+          <a href="#" class="btn btn-outline-primary btn-sm">Comprar</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+    <footer class="bg-white pt-4">
+      <div class="bg-info text-white py-2">
+        <div class="container d-flex justify-content-start gap-4 fs-5">
+          <span class="fw-bold me-3">REDES SOCIAIS</span>
+          <i class="bi bi-facebook me-3"></i>
+          <i class="bi bi-instagram me-3"></i>
+          <i class="bi bi-youtube me-3"></i>
+          <i class="bi bi-tiktok me-3"></i>
+        </div>
+      </div>
+
+      <div class="container py-4">
+        <div class="row text-start small text-muted">
+          <div class="col-md-2 mb-4">
+            <h6 class="text-info fw-bold">SOBRE A CULTURA</h6>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="text-muted text-decoration-none fw-medium"
+                  >Quem somos</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none fw-medium"
+                  >Eventos</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none fw-medium"
+                  >Trabalhe conosco</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none fw-medium"
+                  >Vale-presente</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none fw-medium"
+                  >Recuperação Judicial</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 mb-4">
+            <h6 class="text-info fw-bold">ATENDIMENTO AO CLIENTE</h6>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="text-muted text-decoration-none fw-medium"
+                  >Entre em contato</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none fw-medium"
+                  >Política de Privacidade</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none fw-medium"
+                  >Entrega e devolução</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none fw-medium"
+                  >Perguntas e respostas</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none fw-medium"
+                  >Atendimento Kobo</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 mb-4">
+            <h6 class="text-info fw-bold">SERVIÇOS</h6>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="text-muted text-decoration-none fw-medium"
+                  >Cultura Pass</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none fw-medium"
+                  >Sebo Cultura</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none fw-medium"
+                  >Teatro Cultura</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none fw-medium"
+                  >Mais Cultura</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-muted text-decoration-none fw-medium"
+                  >Marketplace</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <h6 class="text-info fw-bold">FORMAS DE PAGAMENTO</h6>
+            <div class="mb-2">
+              <img
+                src="https://logodownload.org/wp-content/uploads/2016/10/visa-logo-0.png"
+                width="50"
+                alt="Visa"
+              />
+              <img
+                src="https://logodownload.org/wp-content/uploads/2014/07/mastercard-logo-4.png"
+                width="50"
+                alt="MasterCard"
+              />
+              <img
+                src="https://logodownload.org/wp-content/uploads/2014/07/cielo-logo-0.png"
+                width="40"
+                alt="Elo"
+              />
+              <img
+                src="https://logodownload.org/wp-content/uploads/2015/03/hipercard-logo-0.png"
+                width="40"
+                alt="Amex"
+              />
+            </div>
+            <div>
+              <img
+                src="https://logodownload.org/wp-content/uploads/2014/10/paypal-logo-2.png"
+                width="50"
+                alt="PayPal"
+              />
+              <img
+                src="https://logodownload.org/wp-content/uploads/2019/09/boleto-logo-0.png"
+                width="50"
+                alt="Boleto"
+              />
+              <img
+                src="https://logodownload.org/wp-content/uploads/2020/02/pix-bc-logo-0.png"
+                width="60"
+                alt="Pix"
+              />
+            </div>
+            <div>
+              <img
+                src="https://logodownload.org/wp-content/uploads/2014/05/banco-do-brasil-logo-0.png"
+                width="50"
+                alt="PayPal"
+              />
+              <img
+                src="https://logodownload.org/wp-content/uploads/2014/05/itau-logo-0.png"
+                width="50"
+                alt="Boleto"
+              />
+              <img
+                src="https://logodownload.org/wp-content/uploads/2018/09/bradesco-logo-novo-2018.png"
+                width="40"
+                alt="Pix"
+              />
+              <img
+                src="https://logodownload.org/wp-content/uploads/2014/02/caixa-logo-0.png"
+                width="50"
+                alt="Pix"
+              />
+              <img
+                src="https://logodownload.org/wp-content/uploads/2017/05/santander-logo-1.png"
+                width="50"
+                alt="Pix"
+              />
+            </div>
+          </div>
+
+          <div class="col-md-2 mb-4 text-center">
+            <h6 class="text-info fw-bold">CERTIFICADOS</h6>
+            <img
+              src="/img/certificado.webp"
+              class="img-fluid"
+              alt="Selo Ebit"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-light py-3 border-top">
+        <div class="container text-center small text-muted">
+          <p class="mb-1">
+            Livraria Cultura, todos os direitos reservados. Copyright 2025
+          </p>
+          <p class="mb-0">
+            UTFPR - Av. Profª Laura Pacheco Bastos, 800 - Industrial, Guarapuava
+            - PR - Brasil - CNPJ 00.000.000/0000-00
+          </p>
+          <p class="mb-0">
+            Site criado como modelo de estudos universitario com base no site da
+            livraria cultura. Sem fins lucrativos.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
