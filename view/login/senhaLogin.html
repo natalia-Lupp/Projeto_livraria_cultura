@@ -67,7 +67,7 @@
             <i class="bi bi-arrow-left"></i> Voltar
           </a>
           <button
-            type="submit"
+            type="button"
             class="btn btn-info fw-bold text-white"
             id="cadastrarSenha"
           >
@@ -97,13 +97,16 @@
           }
 
           // Salvar no localStorage sem apagar dados existentes
-          const dadosAtuais =
-            JSON.parse(localStorage.getItem("dadosUsuario")) || {};
-          dadosAtuais.senha = senha;
-          localStorage.setItem("dadosUsuario", JSON.stringify(dadosAtuais));
+          const queryString = window.location.search;
+          const urlParams = new URLSearchParams(queryString);
+          const email = urlParams.get("email");
+
+          const user = JSON.parse(localStorage.getItem(email)) || {};
+          user.senha = senha;
+          localStorage.setItem(email, JSON.stringify(user));
 
           alert("Senha cadastrada com sucesso!");
-          window.location.href = "minhaConta.html"; // ou a próxima página desejada
+          window.location.href = "senhaEmailLogin.html"; // ou a próxima página desejada
         });
       });
     </script>

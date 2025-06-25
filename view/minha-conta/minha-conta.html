@@ -160,7 +160,7 @@
             />
             <div class="d-flex flex-column justify-content-center">
               <span class="fw-medium fs-5 mb-0">Olá!</span>
-              <span class="fw-medium fs-5 mb-0">Fulano de Tal</span>
+              <span class="fw-medium fs-5 mb-0">usuario</span>
             </div>
           </div>
 
@@ -271,9 +271,11 @@
 
                 <div class="col-md-6">
                   <small class="text-dark fw-bold">Email</small>
-                  <p class="mb-0 small text-muted" id="exibir-email">
-                    fulano_d_tal@gmail.com
-                  </p>
+                  <p class="mb-0 small text-muted" id="exibir-email">-</p>
+                </div>
+                <div class="col-md-6">
+                  <small class="text-dark fw-bold">Senha</small>
+                  <p class="mb-0 small text-muted" id="exibir-senha">-</p>
                 </div>
                 <div class="col-md-6">
                   <small class="text-dark fw-bold">Telefone</small>
@@ -712,59 +714,31 @@
           }
         });
 
-        // === FORMULÁRIO DO MODAL ===
-        function preencherCampos(dados) {
-          $("#exibir-nome").text(dados.nome || "-");
-          $("#exibir-sobrenome").text(dados.sobrenome || "-");
-          $("#exibir-nascimento").text(dados.nascimento || "-");
-          $("#exibir-genero").text(dados.genero || "-");
-          $("#exibir-email").text(dados.email || "-");
-          $("#exibir-telefone").text(dados.telefone || "-");
-          $("#exibir-cep").text(dados.cep || "-");
-          $("#exibir-cidade").text(dados.cidade || "-");
-          $("#exibir-estado").text(dados.estado || "-");
-          $("#exibir-endereco").text(dados.endereco || "-");
-        }
-
-        const dadosSalvos = localStorage.getItem("dadosUsuario");
-        if (dadosSalvos) {
-          const dados = JSON.parse(dadosSalvos);
-          preencherCampos(dados);
-        }
-
-        // Salvar dados no modal
-        $("#btn-salvar").on("click", function () {
-          const dados = {
-            nome: $("#nome").val(),
-            sobrenome: $("#sobrenome").val(),
-            nascimento: $("#nascimento").val(),
-            genero: $("#genero").val(),
-            email: $("#email").val(),
-            telefone: $("#telefone").val(),
-            cep: $("#cep").val(),
-            cidade: $("#cidade").val(),
-            estado: $("#estado").val(),
-            endereco: $("#endereco").val(),
-          };
-
-          localStorage.setItem("dadosUsuario", JSON.stringify(dados));
-          preencherCampos(dados);
-          $("#editarModal").modal("hide");
-        });
-
         // Botão "Sair" no menu lateral
         $("#btn-sair").on("click", function (e) {
-          e.preventDefault();
+          localStorage.removeItem("isLoggedIn");
           window.location.href = "../tela-inicial/tela-inicial.html";
         });
 
         // Seletor de conta (dropdown superior)
-        $("#menuConta").on("change", function () {
-          const valorSelecionado = $(this).val();
-          if (valorSelecionado === "sair") {
-            window.location.href = "../tela-inicial/tela-inicial.html";
-          }
-        });
+        // $("#menuConta").on("change", function () {
+        //   const valorSelecionado = $(this).val();
+        //   if (valorSelecionado === "sair") {
+        //     window.location.href = "../tela-inicial/tela-inicial.html";
+        //   }
+        // });
+
+        // === EXIBIR EMAIL E SENHA SALVOS ===
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const email = urlParams.get("email");
+        const dados = localStorage.getItem(email);
+
+        if (dados) {
+          const user = JSON.parse(dados);
+          $("#exibir-email").text(user.email || "-");
+          $("#exibir-senha").text(user.senha || "-");
+        }
       });
     </script>
   </body>

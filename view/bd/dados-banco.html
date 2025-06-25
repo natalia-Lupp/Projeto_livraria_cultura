@@ -1,3 +1,4 @@
+<!-- banco de dados usado somente para teste visual se dados estão sendo salvos de maneira visual-->
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -82,23 +83,13 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script>
       $(document).ready(function () {
-        const dadosSalvos = localStorage.getItem("dadosUsuario");
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const email = urlParams.get("email");
+        const dadosSalvos = localStorage.getItem(email);
 
         if (dadosSalvos) {
           const dados = JSON.parse(dadosSalvos);
-
-          $("#bd-nome").text(dados.nome || "-");
-          $("#bd-sobrenome").text(dados.sobrenome || "-");
-          $("#bd-nascimento").text(dados.nascimento || "-");
-          $("#bd-genero").text(dados.genero || "-");
-          $("#bd-email").text(dados.email || "-");
-          $("#bd-telefone").text(dados.telefone || "-");
-          $("#bd-cep").text(dados.cep || "-");
-          $("#bd-cidade").text(dados.cidade || "-");
-          $("#bd-estado").text(dados.estado || "-");
-          $("#bd-endereco").text(dados.endereco || "-");
-
-          // Bloco separado para login
           $("#login-email").text(dados.email || "-");
           $("#login-senha").text(dados.senha || "-");
         }

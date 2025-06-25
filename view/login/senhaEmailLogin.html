@@ -88,7 +88,7 @@
             return;
           }
 
-          const dados = JSON.parse(localStorage.getItem("dadosUsuario"));
+          const dados = JSON.parse(localStorage.getItem(emailDigitado));
 
           // Verificações
           if (!dados) {
@@ -100,8 +100,10 @@
           const senhaSalva = dados.senha;
 
           if (emailDigitado === emailSalvo && senhaDigitada === senhaSalva) {
+            localStorage.setItem("isLoggedIn", true);
             // Sucesso → redireciona
-            window.location.href = "../minha-conta/minha-conta.html";
+            window.location.href =
+              "../minha-conta/minha-conta.html?email=" + emailSalvo;
           } else {
             alert("Email ou senha incorretos.");
           }
