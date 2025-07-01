@@ -1,12 +1,11 @@
-<div class="container-fluid bg-info text-white py-2">
+
+<div class="container-fluid bg-info text-white py-2 z-1030">
+
       <div class="container d-flex justify-content-between align-items-center">
         <!-- Logo + Busca -->
         <div class="d-flex align-items-center flex-grow-1 me-4">
           <h1 class="mb-0 me-4 text-nowrap text-white">livraria cultura</h1>
-          <div
-            class="input-group search-bar flex-grow-1"
-            style="max-width: 600px"
-          >
+          <div class="input-group search-bar flex-grow-1 tanho-navbar">
             <select
               class="form-select filtro-site rounded-0 shadow-none"
               aria-label="Filtro de busca"
@@ -37,10 +36,9 @@
         <div class="d-flex align-items-center">
           <i class="bi bi-person-circle fs-3 me-2 text-secondary"></i>
           <div>
-            <div class="fw-medium">
-              Olá, <span id="name-user-span">"nome do usuario aqui"</span>
-            </div>
+            <div class="fw-medium">Olá <span id="name-user-span">"nome do usuario aqui"</span></div>
             <select
+              id="menuConta"
               class="form-select form-select-sm border-0 bg-transparent text-white fw-medium p-0 shadow-none"
               style="width: auto"
             >
@@ -59,26 +57,26 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Sub-barra -->
-    <div class="container-fluid sub-bar bg-info text-white">
-      <div class="container d-flex justify-content-center py-1">
-        <a href="#" class="me-3 text-white text-decoration-none fs-6"
-          >Atendimento e Televendas</a
-        >
-        <span class="me-3 text-white">|</span>
-        <a href="#" class="me-3 text-white text-decoration-none fs-6"
-          >Atendimento Empresas</a
-        >
-        <span class="me-3">|</span>
-        <a href="#" class="me-3 text-white text-decoration-none fs-6"
-          >Sebo Cultura</a
-        >
-        <span class="me-3">|</span>
-        <a href="#" class="me-3 text-white text-decoration-none fs-6"
-          >Cultura Pass</a
-        >
+      <!-- Sub-barra -->
+      <div class="container-fluid sub-bar bg-info text-white">
+        <div class="container d-flex justify-content-center py-1">
+          <a href="#" class="me-3 text-white text-decoration-none fs-6"
+            >Atendimento e Televendas</a
+          >
+          <span class="me-3 text-white">|</span>
+          <a href="#" class="me-3 text-white text-decoration-none fs-6"
+            >Atendimento Empresas</a
+          >
+          <span class="me-3">|</span>
+          <a href="#" class="me-3 text-white text-decoration-none fs-6"
+            >Sebo Cultura</a
+          >
+          <span class="me-3">|</span>
+          <a href="#" class="me-3 text-white text-decoration-none fs-6"
+            >Cultura Pass</a
+          >
+        </div>
       </div>
     </div>
 
@@ -88,26 +86,19 @@
       class="container-fluid bg-light border-bottom shadow-sm small"
     >
       <div class="container d-flex align-items-center py-2">
-        <i class="bi bi-list fs-5 text-info"></i>
-        <div class="dropdown">
-          <button
-            class="btn btn-sm bg-transparent border-0 text-info fw-bold dropdown-toggle me-4"
-            type="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Compre por categoria
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Livros</a></li>
-            <li><a class="dropdown-item" href="#">eBooks</a></li>
-            <li><a class="dropdown-item" href="#">Infantil</a></li>
-            <li><a class="dropdown-item" href="#">Outras categorias</a></li>
-            <li><a class="dropdown-item" href="#">Vale-presente</a></li>
-            <li><a class="dropdown-item" href="#">Cultura Pass</a></li>
-            <li><a class="dropdown-item" href="#">Atendimento de vendas</a></li>
-          </ul>
-        </div>
+        <i class="bi bi-list me-3 fs-4 text-info"></i>
+        <select
+          class="form-select form-select-sm border-0 text-info fw-bold p-0 w-auto bg-transparent focus-ring-0 me-3"
+        >
+          <option selected disabled class="">Compre por categoria</option>
+          <option value="livros">Livros</option>
+          <option value="ebooks">eBooks</option>
+          <option value="infantil">Infantil</option>
+          <option value="outras">Outras categorias</option>
+          <option value="vale-presente">Vale-presente</option>
+          <option value="cultura-pass">Cultura Pass</option>
+          <option value="vendas">&#xF618; Atendimento de vendas</option>
+        </select>
 
         <a href="#" class="me-3 text-muted text-decoration-none"
           >Literatura Brasileira</a
