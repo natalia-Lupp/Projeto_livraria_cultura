@@ -24,7 +24,18 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       // Adicionar listener para o seletor de conta (dropdown)
-      const menuConta = document.getElementById("menuConta");
+
+      const sairBtn = document.getElementById("sairConta");
+      if (sairBtn) {
+        sairBtn.addEventListener("click", (e) => {
+          e.preventDefault(); // para não navegar antes do script
+          localStorage.removeItem("isLoggedIn");
+          localStorage.removeItem("nomeUsuario");
+          window.location.href = "../tela-inicial/tela-inicial.html";
+        });
+      }
+
+      /*  const menuConta = document.getElementById("menuConta");
       if (menuConta) {
         menuConta.addEventListener("change", (e) => {
           if (e.target.value === "sair") {
@@ -33,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
             window.location.href = "../tela-inicial/tela-inicial.html";
           }
         });
-      }
+      }*/
 
       // Manter seu código que já estava no fetch, ex. categoriasBar scroll
       const checkCategoriasBar = () => {
