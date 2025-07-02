@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Livraria Cultura - Minha Conta</title>
+    <!--bootstrap-->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -12,8 +13,19 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../../css/minhaConta.css" />
+    <!-- fonte-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- css global e de cada pagina-->
     <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/minhaConta.css" />
   </head>
   <body>
     <div id="navbar-container" class="fixed-top w-100"></div>
@@ -134,24 +146,28 @@
                 <div class="col-md-6">
                   <small class="text-dark fw-bold">Nome</small>
                   <p class="mb-0 small text-muted" id="exibir-nome">-</p>
+                  <input class="form-control d-none" id="input-nome" type="text" />
                 </div>
                 <div class="col-md-6">
                   <small class="text-dark fw-bold">Sobrenome</small>
                   <p class="mb-0 small text-muted" id="exibir-sobrenome">-</p>
+                  <input class="form-control d-none" id="input-sobrenome" type="text" />
                 </div>
 
                 <div class="col-md-6">
                   <small class="text-dark fw-bold">Data de nascimento</small>
                   <p class="mb-0 small text-muted" id="exibir-nascimento">-</p>
+                  <input class="form-control d-none" id="input-nascimento" type="text" />
                 </div>
                 <div class="col-md-6">
                   <small class="text-dark fw-bold">Gênero</small>
                   <p class="mb-0 small text-muted" id="exibir-genero">-</p>
+                  <input class="form-control d-none" id="input-genero" type="text" />
                 </div>
-
                 <div class="col-md-6">
                   <small class="text-dark fw-bold">Email</small>
                   <p class="mb-0 small text-muted" id="exibir-email">-</p>
+                  
                 </div>
                 <div class="col-md-6">
                   <small class="text-dark fw-bold">Senha</small>
@@ -160,38 +176,36 @@
                 <div class="col-md-6">
                   <small class="text-dark fw-bold">Telefone</small>
                   <p class="mb-0 small text-muted" id="exibir-telefone">-</p>
+                  <input class="form-control d-none" id="input-telefone" type="text" />
                 </div>
 
                 <div class="col-md-6">
                   <small class="text-dark fw-bold">CEP</small>
                   <p class="mb-0 small text-muted" id="exibir-cep">-</p>
+                  <input class="form-control d-none" id="input-cep" type="text" />
                 </div>
                 <div class="col-md-6">
                   <small class="text-dark fw-bold">Cidade</small>
                   <p class="mb-0 small text-muted" id="exibir-cidade">-</p>
+                  <input class="form-control d-none" id="input-cidade" type="text" />
                 </div>
 
                 <div class="col-md-6">
                   <small class="text-dark fw-bold">Estado</small>
                   <p class="mb-0 small text-muted" id="exibir-estado">-</p>
+                  <input class="form-control d-none" id="input-estado" type="text" />
                 </div>
                 <div class="col-md-6">
                   <small class="text-dark fw-bold">Endereço Principal</small>
                   <p class="mb-0 small text-muted" id="exibir-endereco">-</p>
+                   <input class="form-control d-none" id="input-endereco" type="text" />
                 </div>
               </div>
 
               <!-- Botão alinhado à direita -->
-              <div class="text-end mt-4">
-                <a
-                  href="#"
-                  class="btn-outline-info btn-sm fw-bold small text-info rounded-pill"
-                  data-bs-toggle="modal"
-                  data-bs-target="#editarModal"
-                  >EDITAR</a
-                >
-              </div>
-            </div>
+            <div class="text-end mt-4" id="botoes-edicao">
+  <button id="btn-editar" class="btn btn-outline-info btn-sm fw-bold small text-info rounded-pill">EDITAR</button>
+</div>
           </div>
 
           <!-- Newsletter continua à direita, FORA da borda -->
@@ -214,102 +228,6 @@
                   Quero receber e-mails com promoções.
                 </label>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- modal de teste editar dados-->
-      <div
-        class="modal fade"
-        id="editarModal"
-        tabindex="-1"
-        aria-labelledby="editarModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header border-0">
-              <h5 class="modal-title fw-bold" id="editarModalLabel">
-                Editar Dados Pessoais
-              </h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Fechar"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <form>
-                <div class="row g-3">
-                  <div class="col-md-6">
-                    <label for="nome" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="nome" />
-                  </div>
-                  <div class="col-md-6">
-                    <label for="sobrenome" class="form-label">Sobrenome</label>
-                    <input type="text" class="form-control" id="sobrenome" />
-                  </div>
-                  <div class="col-md-6">
-                    <label for="nascimento" class="form-label"
-                      >Data de Nascimento</label
-                    >
-                    <input type="date" class="form-control" id="nascimento" />
-                  </div>
-                  <div class="col-md-6">
-                    <label for="genero" class="form-label">Gênero</label>
-                    <select id="genero" class="form-select">
-                      <option selected>Selecione</option>
-                      <option>Feminino</option>
-                      <option>Masculino</option>
-                      <option>Outro</option>
-                    </select>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" />
-                  </div>
-                  <div class="col-md-6">
-                    <label for="telefone" class="form-label">Telefone</label>
-                    <input type="tel" class="form-control" id="telefone" />
-                  </div>
-                  <div class="col-md-4">
-                    <label for="cep" class="form-label">CEP</label>
-                    <input type="text" class="form-control" id="cep" />
-                  </div>
-                  <div class="col-md-4">
-                    <label for="cidade" class="form-label">Cidade</label>
-                    <input type="text" class="form-control" id="cidade" />
-                  </div>
-                  <div class="col-md-4">
-                    <label for="estado" class="form-label">Estado</label>
-                    <input type="text" class="form-control" id="estado" />
-                  </div>
-                  <div class="col-12">
-                    <label for="endereco" class="form-label"
-                      >Endereço Principal</label
-                    >
-                    <input type="text" class="form-control" id="endereco" />
-                  </div>
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer border-0">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Cancelar
-              </button>
-              <button
-                type="submit"
-                class="btn btn-info text-white"
-                id="btn-salvar"
-              >
-                Salvar
-              </button>
             </div>
           </div>
         </div>
@@ -381,38 +299,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../navbar.js"></script>
     <script src="../rodape.js"></script>
-    <script>
-      $(document).ready(function () {
-        // Botão "Sair" no menu lateral
-        $("#btn-sair").on("click", function (e) {
-          localStorage.removeItem("isLoggedIn");
-          localStorage.removeItem("nomeUsuario"); // se tiver salvo
-          window.location.href = "../tela-inicial/tela-inicial.html";
-        });
-        /* $("#btn-sair").on("click", function (e) {
-          localStorage.removeItem("isLoggedIn");
-          window.locat */
+    <script src="minha-conta.js" type="module"></script>
+   
 
-        // Seletor de conta (dropdown superior)
-        // $("#menuConta").on("change", function () {
-        //   const valorSelecionado = $(this).val();
-        //   if (valorSelecionado === "sair") {
-        //     window.location.href = "../tela-inicial/tela-inicial.html";
-        //   }
-        // });
-
-        // === EXIBIR EMAIL E SENHA SALVOS ===
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const email = urlParams.get("email");
-        const dados = localStorage.getItem(email);
-
-        if (dados) {
-          const user = JSON.parse(dados);
-          $("#exibir-email").text(user.email || "-");
-          $("#exibir-senha").text(user.senha || "-");
-        }
-      });
-    </script>
   </body>
 </html>

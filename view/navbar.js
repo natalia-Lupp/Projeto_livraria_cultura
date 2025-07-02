@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((data) => {
       container.innerHTML = data;
 
-      // Agora que a navbar está no DOM, atualize o texto conforme o login
+      //altera pra bem vindo
       const nameSpan = document.getElementById("name-user-span");
 
       if (!localStorage.getItem("isLoggedIn")) {
