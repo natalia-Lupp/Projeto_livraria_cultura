@@ -7,30 +7,45 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((data) => {
       container.innerHTML = data;
 
-      //altera pra bem vindo
+      // Atualiza saudação com nome do usuário ou "bem-vindo"
       const nameSpan = document.getElementById("name-user-span");
+      const menuEntrar = document.getElementById("menu-entrar-cadastrar");
 
       if (!localStorage.getItem("isLoggedIn")) {
         if (nameSpan) {
           nameSpan.textContent = "bem-vindo";
         }
+
+        // Usuário não logado - habilita link Entrar / Cadastrar
+        if (menuEntrar) {
+          menuEntrar.classList.remove("disabled", "text-muted");
+          menuEntrar.setAttribute("href", "/view/login/login.html");
+          menuEntrar.style.pointerEvents = "auto";
+          menuEntrar.textContent = "Entrar / Cadastrar";
+        }
       } else {
-        // Se quiser colocar o nome do usuário, pode pegar de localStorage e mostrar aqui
-        // Exemplo:
+        // Usuário logado - mostra nome e desativa link Entrar / Cadastrar
         const nomeUsuario = localStorage.getItem("nomeUsuario") || "usuário";
         if (nameSpan) {
           nameSpan.textContent = nomeUsuario;
         }
+
+        if (menuEntrar) {
+          menuEntrar.classList.add("disabled", "text-muted");
+          menuEntrar.removeAttribute("href");
+          menuEntrar.style.pointerEvents = "none";
+          menuEntrar.textContent = "Entrar / Cadastrar";
+        }
       }
 
-      // Adicionar listener para o seletor de conta (dropdown)
-
+      // Listener para botão "Sair"
       const sairBtn = document.getElementById("sairConta");
       if (sairBtn) {
         sairBtn.addEventListener("click", (e) => {
-          e.preventDefault(); // para não navegar antes do script
+          e.preventDefault(); // impede navegação padrão
           localStorage.removeItem("isLoggedIn");
           localStorage.removeItem("nomeUsuario");
+          localStorage.removeItem("emailUsuario");
           window.location.href = "../tela-inicial/tela-inicial.html";
         });
       }
@@ -46,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }*/
 
-      // Manter seu código que já estava no fetch, ex. categoriasBar scroll
+     // Função para esconder/mostrar sub-barra categorias conforme scroll
       const checkCategoriasBar = () => {
         const $categoriasBar = $("#categoriasBar");
         if ($categoriasBar.length === 0) {

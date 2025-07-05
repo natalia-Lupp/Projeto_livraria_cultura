@@ -12,3 +12,25 @@
   font-size: 0.8rem;
   margin-top: 0.25rem;
 }
+
+@keyframes zoomGlow {
+  0% {
+    transform: scale(0.8);
+    filter: drop-shadow(0 0 0 transparent);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px rgba(0, 123, 255, 0.7)); /* brilho azul suave */
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0 transparent);
+    opacity: 1;
+  }
+}
+
+.zoom-glow-animation {
+  animation: zoomGlow 0.6s ease forwards;
+}

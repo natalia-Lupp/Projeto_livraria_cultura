@@ -1,4 +1,5 @@
 import { UserService } from "../../service/user.service.js";
+import { AddressService } from "../../service/adress.service.js";
 
 $(document).ready(function () {
   // Proteção: só entra se estiver logado e com email salvo
@@ -31,13 +32,20 @@ $(document).ready(function () {
   $("#saudacao-nome").text(user.nome || "usuario");
   localStorage.setItem("nomeUsuario", user.nome || "usuário");
 
+  const fotoPerfil = $("#foto-perfil");
+
   if (user.genero === "Masculino") {
-    $("#foto-perfil").attr("src", "https://randomuser.me/api/portraits/men/1.jpg");
+    fotoPerfil.attr("src", "https://randomuser.me/api/portraits/men/1.jpg");
   } else if (user.genero === "Feminino") {
-    $("#foto-perfil").attr("src", "https://randomuser.me/api/portraits/women/44.jpg");
+    fotoPerfil.attr("src", "https://randomuser.me/api/portraits/women/44.jpg");
   } else {
-    $("#foto-perfil").attr("src", "https://via.placeholder.com/64?text=👤");
+    fotoPerfil.attr("src", "https://via.placeholder.com/64?text=👤");
   }
+
+  // Animação zoom + brilho
+  fotoPerfil.removeClass("zoom-glow-animation");
+  void fotoPerfil[0].offsetWidth; // força reflow
+  fotoPerfil.addClass("zoom-glow-animation");
 
   const campos = [
     "nome",
@@ -65,6 +73,29 @@ $(document).ready(function () {
     }
   });
 
+  const addressService = new AddressService();
+  let enderecoViaCep = null;
+
+  $("#input-cep").on("blur", async function () {
+    const cep = $(this).val();
+    try {
+      const endereco = await addressService.buscarEnderecoPorCEP(cep);
+
+      // Armazena temporariamente (ainda não salva no usuário)
+      enderecoViaCep = endereco;
+
+      // Mostra no formulário apenas (não altera os <p> de exibição)
+      $("#input-endereco").val(
+        `${endereco.logradouro} ${endereco.bairro}`.trim()
+      );
+      $("#input-cidade").val(endereco.cidade);
+      $("#input-estado").val(endereco.estado);
+    } catch (erro) {
+      alert(erro.message);
+      enderecoViaCep = null;
+    }
+  });
+
   $("#btn-editar").on("click", () => alternarModoEdicao(true));
 
   function alternarModoEdicao(ativar) {
@@ -77,7 +108,8 @@ $(document).ready(function () {
         $p.addClass("d-none");
       } else {
         if (campo === "genero") {
-          const generoSelecionado = $('input[name="genero"]:checked').val() || "-";
+          const generoSelecionado =
+            $('input[name="genero"]:checked').val() || "-";
           $p.text(generoSelecionado);
         } else {
           $p.text($input.val());
@@ -106,7 +138,9 @@ $(document).ready(function () {
   function mostrarErro(id, mensagem) {
     const $input = $(`#input-${id}`);
     if ($input.next(".mensagem-erro").length === 0) {
-      $input.after(`<small class="mensagem-erro text-danger">${mensagem}</small>`);
+      $input.after(
+        `<small class="mensagem-erro text-danger">${mensagem}</small>`
+      );
     }
   }
 
@@ -120,13 +154,17 @@ $(document).ready(function () {
     const camposValidados = {
       nome: {
         valor: $("#input-nome").val().trim(),
-        regex: /^[A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-záéíóúâêôãõç]+(?: [A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-záéíóúâêôãõç]+)*$/,
-        mensagem: "O nome deve começar com letra maiúscula e não conter números.",
+        regex:
+          /^[A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-záéíóúâêôãõç]+(?: [A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-záéíóúâêôãõç]+)*$/,
+        mensagem:
+          "O nome deve começar com letra maiúscula e não conter números.",
       },
       sobrenome: {
         valor: $("#input-sobrenome").val().trim(),
-        regex: /^[A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-záéíóúâêôãõç]+(?: [A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-záéíóúâêôãõç]+)*$/,
-        mensagem: "O sobrenome deve começar com letra maiúscula e não conter números.",
+        regex:
+          /^[A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-záéíóúâêôãõç]+(?: [A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-záéíóúâêôãõç]+)*$/,
+        mensagem:
+          "O sobrenome deve começar com letra maiúscula e não conter números.",
       },
       nascimento: {
         valor: $("#input-nascimento").val().trim(),
