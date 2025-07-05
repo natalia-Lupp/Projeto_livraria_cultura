@@ -31,12 +31,12 @@ async function renderizarCards(containerId, queryTerm, limit = 20, isCarousel = 
 
       col.innerHTML = `
         <div class="card card-uniform-height text-center">
-          <img
-            src="${livro.product_photo}"
-            class="card-img-top"
-            alt="${livro.product_title}"
-            onerror="this.onerror=null;this.src='https://via.placeholder.com/150?text=Capa+Indisponível';"
-          />
+         <img
+  src="${livro.product_photo}"
+  class="card-img-top"
+  alt="${livro.product_title}"
+/>
+
           <div class="card-body">
             <small class="text-muted">${livro.product_byline || "Editora Desconhecida"}</small>
             <h6 class="card-title">${livro.product_title}</h6>

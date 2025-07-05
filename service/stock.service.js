@@ -1,25 +1,28 @@
 export class StockService {
   constructor() {
-    this.apiUrl = 'https://real-time-amazon-data.p.rapidapi.com/search';
-    this.apiKey = 'cdf6d1ee7dmsh568db3689299c59p1f7cecjsnef44a5f3b863';
-    this.host = 'real-time-amazon-data.p.rapidapi.com';
+    this.apiUrl = 'https://openlibrary.org/search.json';
+    this.coverUrl = 'https://covers.openlibrary.org/b/id/';
   }
 
   async getLivros(query = 'books') {
-    const url = `${this.apiUrl}?query=${query}&page=1&country=US&category_id=stripbooks`;
-
-    const options = {
-      method: 'GET',
-      headers: {
-        'x-rapidapi-key': this.apiKey,
-        'x-rapidapi-host': this.host,
-      },
-    };
+    const url = `${this.apiUrl}?q=${encodeURIComponent(query)}&limit=20`;
 
     try {
-      const response = await fetch(url, options);
+      const response = await fetch(url);
       const data = await response.json();
-      return data?.data?.products || [];
+      const docs = data?.docs || [];
+
+      return docs.map((doc) => ({
+        product_title: doc.title,
+        product_byline: doc.author_name?.join(", ") || "Autor desconhecido",
+        product_photo: doc.cover_i
+          ? `${this.coverUrl}${doc.cover_i}-L.jpg`
+          : 'https://via.placeholder.com/150?text=Sem+Capa',
+        product_price: doc.first_publish_year
+          ? `Publicado em ${doc.first_publish_year}`
+          : "Ano desconhecido",
+        product_url: `https://openlibrary.org${doc.key}`,
+      }));
     } catch (error) {
       console.error('Erro ao buscar livros:', error);
       return [];
