@@ -30,7 +30,7 @@
   <body>
     <div id="navbar-container" class="fixed-top w-100"></div>
 
-    <div class="container my-4">
+    <div class="container my-4 pt-4">
       <div class="d-flex align-items-center">
         <h2 class="mb-2 me-4 text-dark">Minha Conta</h2>
         <div class="flex-grow-1 border-top border-2"></div>
@@ -44,18 +44,18 @@
           class="d-flex align-items-center justify-content-between flex-wrap"
         >
           <!-- Avatar + Nome -->
-          <div class="d-flex align-items-center flex-shrink-0 me-5">
-            <img
-              src="https://randomuser.me/api/portraits/men/1.jpg"
-              class="rounded-circle me-3 tm-img bg-secondary"
-              alt="Usuário genérico"
-            />
-            <div class="d-flex flex-column justify-content-center">
-              <span class="fw-medium fs-5 mb-0">Olá!</span>
-              <span class="fw-medium fs-5 mb-0">usuario</span>
-            </div>
-          </div>
-
+    <div class="d-flex align-items-center flex-shrink-0 me-5">
+  <img
+    id="foto-perfil"
+    src="https://via.placeholder.com/64?text=👤"
+    class="rounded-circle me-3 tm-img bg-secondary"
+    alt="Usuário"
+  />
+  <div class="d-flex flex-column justify-content-center">
+    <span class="fw-medium fs-5 mb-0">Olá!</span>
+    <span class="fw-medium fs-5 mb-0" id="saudacao-nome">usuário</span>
+  </div>
+</div>
           <!-- Abas -->
           <ul class="nav nav-tabs flex-grow-1 border-0 ms-auto">
             <li class="nav-item" role="presentation">
@@ -139,99 +139,109 @@
       <!--dados pessoais-->
       <div class="container my-5">
         <h2 class="mb-4 fw-bolder">Dados pessoais</h2>
-        <div class="row">
-          <div class="col-md-8">
-            <div class="border border-2 rounded p-4">
-              <div class="row g-3 fs-5 fw-medium">
-                <div class="col-md-6">
-                  <small class="text-dark fw-bold">Nome</small>
-                  <p class="mb-0 small text-muted" id="exibir-nome">-</p>
-                  <input class="form-control d-none" id="input-nome" type="text" />
-                </div>
-                <div class="col-md-6">
-                  <small class="text-dark fw-bold">Sobrenome</small>
-                  <p class="mb-0 small text-muted" id="exibir-sobrenome">-</p>
-                  <input class="form-control d-none" id="input-sobrenome" type="text" />
-                </div>
-
-                <div class="col-md-6">
-                  <small class="text-dark fw-bold">Data de nascimento</small>
-                  <p class="mb-0 small text-muted" id="exibir-nascimento">-</p>
-                  <input class="form-control d-none" id="input-nascimento" type="text" />
-                </div>
-                <div class="col-md-6">
-                  <small class="text-dark fw-bold">Gênero</small>
-                  <p class="mb-0 small text-muted" id="exibir-genero">-</p>
-                  <input class="form-control d-none" id="input-genero" type="text" />
-                </div>
-                <div class="col-md-6">
-                  <small class="text-dark fw-bold">Email</small>
-                  <p class="mb-0 small text-muted" id="exibir-email">-</p>
-                  
-                </div>
-                <div class="col-md-6">
-                  <small class="text-dark fw-bold">Senha</small>
-                  <p class="mb-0 small text-muted" id="exibir-senha">-</p>
-                </div>
-                <div class="col-md-6">
-                  <small class="text-dark fw-bold">Telefone</small>
-                  <p class="mb-0 small text-muted" id="exibir-telefone">-</p>
-                  <input class="form-control d-none" id="input-telefone" type="text" />
-                </div>
-
-                <div class="col-md-6">
-                  <small class="text-dark fw-bold">CEP</small>
-                  <p class="mb-0 small text-muted" id="exibir-cep">-</p>
-                  <input class="form-control d-none" id="input-cep" type="text" />
-                </div>
-                <div class="col-md-6">
-                  <small class="text-dark fw-bold">Cidade</small>
-                  <p class="mb-0 small text-muted" id="exibir-cidade">-</p>
-                  <input class="form-control d-none" id="input-cidade" type="text" />
-                </div>
-
-                <div class="col-md-6">
-                  <small class="text-dark fw-bold">Estado</small>
-                  <p class="mb-0 small text-muted" id="exibir-estado">-</p>
-                  <input class="form-control d-none" id="input-estado" type="text" />
-                </div>
-                <div class="col-md-6">
-                  <small class="text-dark fw-bold">Endereço Principal</small>
-                  <p class="mb-0 small text-muted" id="exibir-endereco">-</p>
-                   <input class="form-control d-none" id="input-endereco" type="text" />
-                </div>
-              </div>
-
-              <!-- Botão alinhado à direita -->
-            <div class="text-end mt-4" id="botoes-edicao">
-  <button id="btn-editar" class="btn btn-outline-info btn-sm fw-bold small text-info rounded-pill">EDITAR</button>
-</div>
+        <div class="container">
+  <div class="row">
+    <!-- Coluna dos dados (formulário) -->
+    <div class="col-md-8">
+      <div class="border border-2 rounded p-4 h-100">
+        <div class="row g-3 fs-5 fw-medium">
+          <!-- Campos do formulário -->
+          <div class="col-md-6">
+            <small class="text-dark fw-bold">Nome</small>
+            <p class="mb-0 small text-muted" id="exibir-nome">-</p>
+            <input class="form-control d-none" id="input-nome" type="text" placeholder="Ex: João" />
           </div>
-
-          <!-- Newsletter continua à direita, FORA da borda -->
-          <div class="col-md-4">
-            <div class="border border-2 rounded p-3">
-              <h6 class="text-muted">Newsletter</h6>
-              <p class="small text-muted mb-2">
-                Deseja receber e-mails com promoções?
-              </p>
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  id="newsletterCheck"
-                />
-                <label
-                  class="form-check-label small text-secondary"
-                  for="newsletterCheck"
-                >
-                  Quero receber e-mails com promoções.
-                </label>
+          <div class="col-md-6">
+            <small class="text-dark fw-bold">Sobrenome</small>
+            <p class="mb-0 small text-muted" id="exibir-sobrenome">-</p>
+            <input class="form-control d-none" id="input-sobrenome" type="text" placeholder="Ex: Silva" />
+          </div>
+          <div class="col-md-6">
+            <small class="text-dark fw-bold">Data de nascimento</small>
+            <p class="mb-0 small text-muted" id="exibir-nascimento">-</p>
+            <input class="form-control d-none" id="input-nascimento" type="text" placeholder="Ex: 01/01/2000"/>
+          </div>
+          <div class="col-md-6">
+            <small class="text-dark fw-bold">Gênero</small>
+            <p class="mb-0 small text-muted" id="exibir-genero">-</p>
+            <div id="input-genero" class="d-none">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="genero" id="genero-m" value="Masculino">
+                <label class="form-check-label" for="genero-m">Masculino</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="genero" id="genero-f" value="Feminino">
+                <label class="form-check-label" for="genero-f">Feminino</label>
               </div>
             </div>
           </div>
+          <div class="col-md-6">
+            <small class="text-dark fw-bold">Email</small>
+            <p class="mb-0 small text-muted" id="exibir-email">-</p>
+          </div>
+          <div class="col-md-6">
+            <small class="text-dark fw-bold">Senha</small>
+            <p class="mb-0 small text-muted" id="exibir-senha">-</p>
+          </div>
+          <div class="col-md-6">
+            <small class="text-dark fw-bold">Telefone</small>
+            <p class="mb-0 small text-muted" id="exibir-telefone">-</p>
+            <input class="form-control d-none" id="input-telefone" type="text" placeholder="Ex: (11) 91234-5678"  />
+          </div>
+          <div class="col-md-6">
+            <small class="text-dark fw-bold">CEP</small>
+            <p class="mb-0 small text-muted" id="exibir-cep">-</p>
+            <input class="form-control d-none" id="input-cep" type="text" placeholder="Ex: 12345-678"  />
+          </div>
+          <div class="col-md-6">
+            <small class="text-dark fw-bold">Cidade</small>
+            <p class="mb-0 small text-muted" id="exibir-cidade">-</p>
+            <input class="form-control d-none" id="input-cidade" type="text" placeholder="Ex: São Paulo" />
+          </div>
+          <div class="col-md-6">
+            <small class="text-dark fw-bold">Estado</small>
+            <p class="mb-0 small text-muted" id="exibir-estado">-</p>
+            <input class="form-control d-none" id="input-estado" type="text" placeholder="Ex: SP" />
+          </div>
+          <div class="col-md-6">
+            <small class="text-dark fw-bold">Endereço Principal</small>
+            <p class="mb-0 small text-muted" id="exibir-endereco">-</p>
+            <input class="form-control d-none" id="input-endereco" type="text" placeholder="Ex: Rua Exemplo 123, Centro" />
+          </div>
+        </div>
+
+        <!-- Links de edição -->
+        <div class="mt-4 d-flex justify-content-end" id="botoes-edicao">
+          <a href="#" id="btn-editar" class="text-decoration-underline text-info small fw-bold">Editar</a>
         </div>
       </div>
+    </div>
+
+    <!-- Newsletter ao lado -->
+    <div class="col-md-4">
+      <div class="border border-2 rounded p-3">
+        <h6 class="text-muted">Newsletter</h6>
+        <p class="small text-muted mb-2">
+          Deseja receber e-mails com promoções?
+        </p>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="newsletterCheck"
+          />
+          <label
+            class="form-check-label small text-secondary"
+            for="newsletterCheck"
+          >
+            Quero receber e-mails com promoções.
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
       <!--modal de teste endereço-->
       <div
@@ -297,6 +307,7 @@
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
     <script src="../navbar.js"></script>
     <script src="../rodape.js"></script>
     <script src="minha-conta.js" type="module"></script>

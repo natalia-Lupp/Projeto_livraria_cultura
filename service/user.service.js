@@ -12,4 +12,8 @@ export class UserService {
 
     localStorage.setItem(novoUsuario.email, JSON.stringify(novoUsuario));
   }
+
+  atualizarNomeUsuario(nome) {
+  localStorage.setItem("nomeUsuario", nome);
+}
 }

@@ -100,10 +100,12 @@
           const senhaSalva = dados.senha;
 
           if (emailDigitado === emailSalvo && senhaDigitada === senhaSalva) {
-            localStorage.setItem("isLoggedIn", true);
-            // Sucesso → redireciona
-            window.location.href =
-              "../minha-conta/minha-conta.html?email=" + emailSalvo;
+            localStorage.setItem("isLoggedIn", "true");
+            localStorage.setItem("nomeUsuario", dados.nome || "usuário");
+            localStorage.setItem("emailUsuario", emailSalvo); // << ESSA LINHA É FUNDAMENTAL
+
+            // Redireciona para a conta
+            window.location.href = "../minha-conta/minha-conta.html";
           } else {
             alert("Email ou senha incorretos.");
           }

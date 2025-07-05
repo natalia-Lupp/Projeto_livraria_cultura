@@ -19,7 +19,7 @@ export class Usuario {
     this.nascimento = nascimento;
     this.telefone = telefone;
     this.cep = cep;
-    this.idade = cidade;
+    this.idade = idade;
     this.estado = estado;
     this.endereco = endereco;
     this.email = email;
