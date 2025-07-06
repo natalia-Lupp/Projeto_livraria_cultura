@@ -43,12 +43,13 @@ async function renderizarCards(
       col.appendChild(livroCard);
       container.appendChild(col);
 
+      /* controle do botão de compras
       const btn = col.querySelector(".btn-detalhes-livro");
       btn.addEventListener("click", () => {
         console.log("Livro selecionado para localStorage:", livro);
         localStorage.setItem("livroSelecionado", JSON.stringify(livro));
         window.location.href = "../vendas/venda-descricao.html";
-      });
+      }); */
     });
 
     // Se for um carrossel, inicializa o Owl Carousel APÓS os itens serem adicionados
@@ -96,6 +97,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   );
 
   // Seção: Para os PEQUENOS (Livros infantis, sem carrossel)
-  // Limitei a 4
+  // Limitei pra 4
   await renderizarCards("livros-pequenos", "children books", 4);
 });
