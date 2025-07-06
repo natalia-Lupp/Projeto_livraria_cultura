@@ -5,12 +5,14 @@
   min-height: 400px;
   box-shadow: var(--bs-box-shadow-sm);
   border: var(--bs-border-width) solid var(--bs-border-color);
+  max-width: 250px; /* limite máximo, ajusta para seu gosto */
+  margin: 0; /* centraliza dentro da coluna */
 }
 
 .card-uniform-height .card-img-top {
-  height: 180px;
+  height: 200px;
   object-fit: contain;
-  padding: 10px;
+  padding: 20px;
   background-color: #fff;
 }
 

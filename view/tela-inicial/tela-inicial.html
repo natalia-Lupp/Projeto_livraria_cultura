@@ -18,23 +18,60 @@
   <body>
     <div id="navbar-container" class="fixed-top w-100"></div>
 
-    <div class="container-fluid p-0">
-      <img src="banner-topo.jpg" class="img-fluid w-100" alt="Banner Cultura Pass" />
+    <div class="container-fluid p-0 mt-3 pt-4">
+      <img src="https://livrariacultura.vteximg.com.br/arquivos/wTarjaPrimeiraCompra.jpg?v=638842388321100000" class="img-fluid w-100" alt="Banner Cultura Pass" />
     </div>
+<!-- Carrossel Bootstrap -->
+<div id="carrossel-promocoes" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://www.livrariacultura.com.br/arquivos/wbHero_Ferias.jpg?v=638865745890300000" class="d-block w-100" alt="Banner 1">
+    </div>
+    <div class="carousel-item">
+      <img src="https://www.livrariacultura.com.br/arquivos/wbHero_Infantil.jpg?v=638843205630670000" class="d-block w-100" alt="Banner 2">
+    </div>
+    <div class="carousel-item">
+      <img src="https://www.livrariacultura.com.br/arquivos/wCashBack.jpg?v=638834605995470000" class="d-block w-100" alt="Banner 3">
+    </div>
+  </div>
+
+ <!-- Botão Anterior -->
+<button class="carousel-control-prev" type="button" data-bs-target="#carrossel-promocoes" data-bs-slide="prev">
+  <span aria-hidden="true">
+    <i class="bi bi-chevron-left bg-light bg-opacity-75 rounded-circle p-2 shadow-lg fs-4 text-muted"></i>
+  </span>
+  <span class="visually-hidden">Anterior</span>
+</button>
+
+<!-- Botão Próximo -->
+<button class="carousel-control-next" type="button" data-bs-target="#carrossel-promocoes" data-bs-slide="next">
+  <span aria-hidden="true">
+    <i class="bi bi-chevron-right bg-light bg-opacity-75 rounded-circle p-2 shadow-lg fs-4 text-muted"></i>
+  </span>
+  <span class="visually-hidden">Próximo</span>
+</button>
+
+  <!-- Indicadores -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carrossel-promocoes" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carrossel-promocoes" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carrossel-promocoes" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+</div>  
 
     <div class="container mt-3">
-      <div class="row g-2">
+      <div class="row g-2 ">
         <div class="col-md-6">
-          <img src="vale-presente.jpg" class="img-fluid w-100" alt="Vale-Presente" />
+          <img src="https://www.livrariacultura.com.br/arquivos/wCARDValePresente2.jpg?v=638590896792970000" class="img-fluid w-100" alt="Vale-Presente" />
         </div>
         <div class="col-md-6">
-          <img src="cultura-pass-vantagens.jpg" class="img-fluid w-100" alt="Assine Cultura Pass" />
+          <img src="https://www.livrariacultura.com.br/arquivos/wCARDCulturaPass.jpg?v=638568501488100000" class="img-fluid w-100" alt="Assine Cultura Pass" />
         </div>
       </div>
     </div>
 
     <div class="container text-center mt-4 mb-4">
-      <h5 class="text-secondary">
+      <h5 class="text-secondary text-muted">
         O que há de novo <strong>NOVIDADES DA CULTURA</strong>
       </h5>
     </div>
@@ -44,37 +81,37 @@
     </div>
 
     <div class="container mt-5 text-center">
-      <h6 class="mb-3">Explore na Cultura</h6>
-      <div class="row justify-content-center g-3">
-        <div class="col-4 col-md-2">
-          <img src="explore-mais-vendidos.jpg" class="rounded-circle img-fluid" alt="Mais Vendidos" />
+      <h3 class="mb-3 text-muted">Explore na Cultura</h3>
+      <div class="row justify-content-center g-5">
+        <div class="col-4 col-md-3">
+          <img src="https://www.livrariacultura.com.br/arquivos/wBolaCollenHoover.jpg?v=638870766556600000" class="rounded-circle img-fluid" alt="Mais Vendidos" />
         </div>
-        <div class="col-4 col-md-2">
-          <img src="explore-lancamentos.jpg" class="rounded-circle img-fluid" alt="Lançamentos" />
+        <div class="col-4 col-md-3">
+          <img src="https://www.livrariacultura.com.br/arquivos/wBolaClariceLispector.jpg?v=638870766819970000" class="rounded-circle img-fluid" alt="Lançamentos" />
         </div>
-        <div class="col-4 col-md-2">
-          <img src="explore-autora.jpg" class="rounded-circle img-fluid" alt="Colleen Hoover" />
+        <div class="col-4 col-md-3">
+          <img src="https://www.livrariacultura.com.br/arquivos/wMauricioDeSouza.jpg?v=638870767358100000" class="rounded-circle img-fluid" alt="Colleen Hoover" />
         </div>
       </div>
     </div>
 
-    <div class="container mt-5">
-      <h6 class="text-center mb-3">Destaques do mês</h6>
+    <div class="container mt-5 text-center">
+      <h3 class="text-center mb-3 text-muted">Destaques do mês</h3>
       <div class="row g-3">
         <div class="col-md-4">
-          <img src="banner-destaque-1.jpg" class="img-fluid w-100" alt="Destaque 1" />
+          <img src="https://www.livrariacultura.com.br/arquivos/wPeao_Boxes.jpg?v=638843220142530000" class="img-fluid w-100" alt="Destaque 1" />
         </div>
         <div class="col-md-4">
-          <img src="banner-destaque-2.jpg" class="img-fluid w-100" alt="Destaque 2" />
+          <img src="https://www.livrariacultura.com.br/arquivos/wPeao_VOZESFEMININAS.jpg?v=638866498680030000" class="img-fluid w-100" alt="Destaque 2" />
         </div>
         <div class="col-md-4">
-          <img src="banner-destaque-3.jpg" class="img-fluid w-100" alt="Destaque 3" />
+          <img src="https://www.livrariacultura.com.br/arquivos/wPeaoEssenciais.jpg?v=638843193472230000" class="img-fluid w-100" alt="Destaque 3" />
         </div>
       </div>
     </div>
 
 <div class="container mt-5 mb-5">
-  <h6 class="text-center mb-4">✓ Mais Vendidos da Veja e Publishnews</h6>
+  <h3 class="text-center mb-4 text-muted">✓ Mais Vendidos da Veja e Publishnews</h3>
   
   <!-- Aqui adicionamos a classe position-relative para controlar as setas -->
   <div class="position-relative">
@@ -83,19 +120,19 @@
 </div>
 
     <div class="container mt-5">
-      <h6 class="text-center mb-4">Muito mais Cultura pra você</h6>
+      <h3 class="text-center mb-4 text-muted">Muito mais Cultura pra você</h3>
       <div class="row g-4 justify-content-center">
         <div class="col-md-5">
-          <img src="banner-literatura.jpg" class="img-fluid w-100" alt="Mais Vendidos Literatura" />
+          <img src="https://www.livrariacultura.com.br/arquivos/wPeaozao_Literatura.jpg?v=638852780894400000" class="img-fluid w-100" alt="Mais Vendidos Literatura" />
         </div>
         <div class="col-md-5">
-          <img src="banner-autoajuda.jpg" class="img-fluid w-100" alt="Mais Vendidos Autoajuda" />
+          <img src="https://www.livrariacultura.com.br/arquivos/wPeaozao_Autoajuda.jpg?v=638852780638530000" class="img-fluid w-100" alt="Mais Vendidos Autoajuda" />
         </div>
       </div>
     </div>
 
     <div class="container mt-5 mb-5">
-      <h6 class="text-center mb-4">Para os PEQUENOS</h6>
+      <h3 class="text-center mb-4 text-muted">Para os PEQUENOS</h3>
       <div class="row row-cols-1 row-cols-md-4 g-4" id="livros-pequenos"></div>
     </div>
 

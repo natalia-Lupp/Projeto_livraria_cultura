@@ -4,7 +4,7 @@ const stockService = new StockService();
 
 // Função genérica para renderizar cards em um container específico
 // Adicionamos um novo parâmetro 'isCarousel'
-async function renderizarCards(containerId, queryTerm, limit = 20, isCarousel = false) {
+async function renderizarCards(containerId, queryTerm, limit = 10, isCarousel = false) {
   const container = document.getElementById(containerId);
 
   if (!container) {
@@ -27,24 +27,29 @@ async function renderizarCards(containerId, queryTerm, limit = 20, isCarousel = 
       const col = document.createElement("div");
       // Se for um carrossel, cada item precisa da classe 'item' do Owl Carousel
       // Caso contrário, usa as classes de coluna do Bootstrap
-      col.className = isCarousel ? "item" : "col";
+      col.className = isCarousel ? "item" : "col-2 mb-4 ";
 
       col.innerHTML = `
-        <div class="card card-uniform-height text-center">
-         <img
-  src="${livro.product_photo}"
-  class="card-img-top"
-  alt="${livro.product_title}"
-/>
+        <div class="card card-uniform-height text-center shadow p-3 mb-5 bg-white rounded">
+        <div class="position-relative">
+      <img
+        src="${livro.product_photo}"
+        class="card-img-top"
+        alt="${livro.product_title}"
+        onerror="this.onerror=null; this.src='https://cdn.pixabay.com/photo/2016/11/29/05/45/book-1867160_1280.jpg';"
+      />
+      <div class="position-absolute bottom-0 start-0 w-100 bg-secondary bg-opacity-75 px-2 py-1 text-center">
+        <small class="text-light">${livro.product_byline || "Autor desconhecido"}</small>
+      </div>
+    </div>
 
-          <div class="card-body">
-            <small class="text-muted">${livro.product_byline || "Editora Desconhecida"}</small>
-            <h6 class="card-title">${livro.product_title}</h6>
-            <p class="text-primary">${livro.product_price || "Preço indisponível"}</p>
-            <a href="${livro.product_url}" target="_blank" class="btn btn-outline-primary btn-sm">Comprar</a>
-          </div>
-        </div>
-      `;
+    <div class="card-body d-flex flex-column">
+      <h6 class="card-title text-muted fs-6 ">${livro.product_title}</h6>
+<p class="text-muted fs-5 fw-bold">${livro.product_price || "Preço indisponível"}</p>
+      <a href="${livro.product_url}" target="_blank" class="btn btn-primary btn-sm mt-auto">Comprar</a>
+    </div>
+  </div>
+`;
       container.appendChild(col);
     });
 
@@ -65,7 +70,7 @@ async function renderizarCards(containerId, queryTerm, limit = 20, isCarousel = 
     992: { items: 4, nav: true },
     1200: { items: 5, nav: true }
   },
-  navText: ['<i class="bi bi-chevron-left"></i>', '<i class="bi bi-chevron-right"></i>']
+  navText: ['<i class="bi bi-chevron-left bg-opacity-75 bg-light.bg-gradient shadow-lg"></i>', '<i class="bi bi-chevron-right bg-light.bg-gradient shadow-lg"></i>']
 });
     }
 
