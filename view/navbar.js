@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     };
+    //console.log("teste");
 
     // ✅ Inicializa a função de controle da barra de categorias
     checkCategoriasBar();
