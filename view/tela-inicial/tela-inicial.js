@@ -4,7 +4,12 @@ const stockService = new StockService();
 
 // Função genérica para renderizar cards em um container específico
 // Adicionamos um novo parâmetro 'isCarousel'
-async function renderizarCards(containerId, queryTerm, limit = 10, isCarousel = false) {
+async function renderizarCards(
+  containerId,
+  queryTerm,
+  limit = 10,
+  isCarousel = false
+) {
   const container = document.getElementById(containerId);
 
   if (!container) {
@@ -12,7 +17,7 @@ async function renderizarCards(containerId, queryTerm, limit = 10, isCarousel = 
     return;
   }
 
-  container.innerHTML = ''; // Limpa o conteúdo atual
+  container.innerHTML = ""; // Limpa o conteúdo atual
 
   try {
     const livros = await stockService.getLivros(queryTerm);
@@ -39,41 +44,54 @@ async function renderizarCards(containerId, queryTerm, limit = 10, isCarousel = 
         onerror="this.onerror=null; this.src='https://cdn.pixabay.com/photo/2016/11/29/05/45/book-1867160_1280.jpg';"
       />
       <div class="position-absolute bottom-0 start-0 w-100 bg-secondary bg-opacity-75 px-2 py-1 text-center">
-        <small class="text-light">${livro.product_byline || "Autor desconhecido"}</small>
+        <small class="text-light">${
+          livro.product_byline || "Autor desconhecido"
+        }</small>
       </div>
     </div>
 
     <div class="card-body d-flex flex-column">
       <h6 class="card-title text-muted fs-6 ">${livro.product_title}</h6>
-<p class="text-muted fs-5 fw-bold">${livro.product_price || "Preço indisponível"}</p>
-      <a href="${livro.product_url}" target="_blank" class="btn btn-primary btn-sm mt-auto">Comprar</a>
+<p class="text-muted fs-5 fw-bold">${
+        livro.product_price || "Preço indisponível"
+      }</p>
+      <button class="btn btn-primary btn-sm mt-auto btn-detalhes-livro">COMPRAR</button>
     </div>
   </div>
 `;
       container.appendChild(col);
+
+      const btn = col.querySelector(".btn-detalhes-livro");
+   btn.addEventListener("click", () => {
+  console.log("Livro selecionado para localStorage:", livro); // ADICIONE ESTA LINHA
+  localStorage.setItem("livroSelecionado", JSON.stringify(livro));
+  window.location.href = "../vendas/venda-descricao.html";
+});
     });
 
     // Se for um carrossel, inicializa o Owl Carousel APÓS os itens serem adicionados
     if (isCarousel) {
       // Usamos $(container).owlCarousel para garantir que o jQuery esteja carregado
       $(container).owlCarousel({
-          loop: true,
-  margin: 10,
-  nav: true,
-  dots: false,
-  autoplay: false,
-  autoHeight: false, // ← aqui!
-  responsive: {
-    0: { items: 1, nav: true },
-    576: { items: 2, nav: true },
-    768: { items: 3, nav: true },
-    992: { items: 4, nav: true },
-    1200: { items: 5, nav: true }
-  },
-  navText: ['<i class="bi bi-chevron-left bg-opacity-75 bg-light.bg-gradient shadow-lg"></i>', '<i class="bi bi-chevron-right bg-light.bg-gradient shadow-lg"></i>']
-});
+        loop: true,
+        margin: 10,
+        nav: true,
+        dots: false,
+        autoplay: false,
+        autoHeight: false, // ← aqui!
+        responsive: {
+          0: { items: 1, nav: true },
+          576: { items: 2, nav: true },
+          768: { items: 3, nav: true },
+          992: { items: 4, nav: true },
+          1200: { items: 5, nav: true },
+        },
+        navText: [
+          '<i class="bi bi-chevron-left bg-opacity-75 bg-light.bg-gradient shadow-lg"></i>',
+          '<i class="bi bi-chevron-right bg-light.bg-gradient shadow-lg"></i>',
+        ],
+      });
     }
-
   } catch (error) {
     console.error(`Erro ao buscar livros para "${queryTerm}":`, error);
     container.innerHTML = `<div class="col-12"><p class="text-center text-danger">Erro ao carregar livros.</p></div>`;
@@ -88,7 +106,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // Seção: Mais vendidos Veja e Publishnews (AGORA COM CARROSSEL)
   // Buscamos mais livros aqui (ex: 15-20) para o carrossel ter o que rolar
-  await renderizarCards("livros-mais-vendidos-carousel", "best sellers", 15, true);
+  await renderizarCards(
+    "livros-mais-vendidos-carousel",
+    "best sellers",
+    15,
+    true
+  );
 
   // Seção: Para os PEQUENOS (Livros infantis, sem carrossel)
   // Limitei a 4

@@ -32,36 +32,32 @@
     <div class="container py-5">
       <div class="row">
         <!-- Capa do Livro -->
-        <div class="col-md-3 text-center">
-          <img
-            src="caminho/para/imagem-livro.jpg"
-            class="img-fluid mb-3"
-            alt="Capa do livro A Biblioteca da Meia-Noite"
-          />
-          <span class="badge bg-danger">Livro Físico</span>
-          <p class="mt-2">
-            <strong>Editora:</strong> <a href="#">Bertrand Brasil</a>
-          </p>
-        </div>
+<div class="col-md-3 text-center">
+  <img id="livro-capa" src="" class="img-fluid mb-3" alt="" />
+  <span class="badge bg-danger">Livro Físico</span>
+  <p class="mt-2">
+    <strong>Editora:</strong> <a href="#" id="livro-editora">-</a>
+  </p>
+</div>
 
-        <!-- Informações do Produto -->
-        <div class="col-md-6">
-          <h3 class="mb-3">A BIBLIOTECA DA MEIA-NOITE</h3>
-
-          <div class="border p-3 bg-white">
-            <div class="d-flex justify-content-between">
-              <div>
-                <p><strong>Livraria Cultura</strong></p>
-                <p>R$ 59,90</p>
-              </div>
-              <div>
-                <p><strong>eBook</strong></p>
-                <p>R$ 31,90</p>
-              </div>
-            </div>
-            <h4 class="text-success">R$ 59,90</h4>
-            <button class="btn btn-warning w-100">ADICIONAR AO CARRINHO</button>
-          </div>
+<!-- Informações do Produto -->
+<div class="col-md-6">
+  <h3 class="mb-3" id="livro-titulo">Título</h3>
+  <div class="border p-3 bg-white">
+    <div class="d-flex justify-content-between">
+      <div>
+        <p><strong>Livraria Cultura</strong></p>
+        <p id="livro-preco-base">R$ --,--</p>
+      </div>
+      <div>
+        <p><strong>eBook</strong></p>
+        <p>R$ 31,90</p>
+      </div>
+    </div>
+    <h4 class="text-success" id="livro-preco-final">R$ --,--</h4>
+    <button class="btn btn-warning w-100">ADICIONAR AO CARRINHO</button>
+  </div>
+</div>
 
           <!-- Calcular Frete -->
           <div class="mt-3 border p-3 bg-white">
@@ -81,11 +77,15 @@
         </div>
       </div>
 
-      <!-- Sobre o Livro -->
+      <!-- Detalhes do Produto -->
       <hr class="my-5" />
-      <div class="row">
-        <h3 class="mb-4">Sobre o Livro</h3>
-            <table class="table table-bordered">
+      <div class="container">
+        <h4 class="mb-4">Detalhes do Produto</h4>
+        <div class="table-responsive">
+            <div class="col-md-12 mt-3">
+  <p><strong>Sinopse:</strong> <span id="sinopse"></span></p>
+</div>
+          <table class="table table-bordered">
             <tbody>
               <tr>
                 <th class="bg-light">Autor</th>
@@ -112,21 +112,6 @@
                 <td>BRASIL</td>
               </tr>
               <tr>
-               </tbody>
-          </table>
-        </div>
-        <div class="col-md-4">
-        <div class="col-md-12 mt-3">
-          <p><strong>Sinopse:</strong></p>
-        </div>
-      </div>
-      <!-- Detalhes do Produto -->
-      <hr class="my-5" />
-      <div class="container">
-        <h4 class="mb-4">Detalhes do Produto</h4>
-        <div class="table-responsive">
-          <table class="table table-bordered">
-            <tbody>
              <th class="bg-light">EAN</th>
                 <td>9788593448888</td>
               </tr>
@@ -184,5 +169,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../navbar.js"></script>
     <script src="../rodape.js"></script>
+    <script src="../vendas/venda-descricao.js"></script>
   </body>
 </html>
+
