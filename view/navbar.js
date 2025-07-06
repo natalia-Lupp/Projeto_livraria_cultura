@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
           if (nameSpan) nameSpan.textContent = "bem-vindo";
           if (menuEntrar) {
             menuEntrar.classList.remove("disabled", "text-muted");
-            menuEntrar.setAttribute("href", "/view/login/login.html");
+            menuEntrar.setAttribute("href", "../login/login.html");
             menuEntrar.style.pointerEvents = "auto";
             menuEntrar.textContent = "Entrar / Cadastrar";
           }
