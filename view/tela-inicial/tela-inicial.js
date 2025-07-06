@@ -1,4 +1,5 @@
 import { StockService } from "../../service/stock.service.js";
+import "../components/livro-card.js";
 
 const stockService = new StockService();
 
@@ -30,46 +31,24 @@ async function renderizarCards(
 
     livrosParaRenderizar.forEach((livro) => {
       const col = document.createElement("div");
-      // CORREÇÃO AQUI:
-      // Se for um carrossel, cada item precisa da classe 'item' do Owl Carousel.
-      // Caso contrário (para as seções normais), não adicione classes de coluna explícitas.
       // A classe 'g-4' na div 'row' pai já cuida do espaçamento entre os cards.
       // A classe 'mb-4' pode ser usada para margem inferior se seus cards precisarem de mais espaço vertical individual.
       col.className = isCarousel ? "item" : "mb-4"; // Removido "col-2"
 
-      col.innerHTML = `
-        <div class="card card-uniform-height text-center shadow p-3 mb-5 bg-white rounded">
-        <div class="position-relative">
-      <img
-        src="${livro.product_photo}"
-        class="card-img-top"
-        alt="${livro.product_title}"
-        onerror="this.onerror=null; this.src='https://cdn.pixabay.com/photo/2016/11/29/05/45/book-1867160_1280.jpg';"
-      />
-      <div class="position-absolute bottom-0 start-0 w-100 bg-secondary bg-opacity-75 px-2 py-1 text-center">
-        <small class="text-light">${
-          livro.product_byline || "Autor desconhecido"
-        }</small>
-      </div>
-    </div>
-
-    <div class="card-body d-flex flex-column">
-      <h6 class="card-title text-muted fs-6 ">${livro.product_title}</h6>
-<p class="text-muted fs-5 fw-bold">${
-        livro.product_price || "Preço indisponível"
-      }</p>
-      <button class="btn btn-primary btn-sm mt-auto btn-detalhes-livro">COMPRAR</button>
-    </div>
-  </div>
-`;
+      const livroCard = document.createElement("livro-card");
+      livroCard.titulo = livro.product_title;
+      livroCard.autor = livro.product_byline || "Autor desconhecido";
+      livroCard.imagem = livro.product_photo;
+      livroCard.preco = livro.product_price || "Preço indisponível";
+      col.appendChild(livroCard);
       container.appendChild(col);
 
       const btn = col.querySelector(".btn-detalhes-livro");
-   btn.addEventListener("click", () => {
-  console.log("Livro selecionado para localStorage:", livro);
-  localStorage.setItem("livroSelecionado", JSON.stringify(livro));
-  window.location.href = "../vendas/venda-descricao.html";
-});
+      btn.addEventListener("click", () => {
+        console.log("Livro selecionado para localStorage:", livro);
+        localStorage.setItem("livroSelecionado", JSON.stringify(livro));
+        window.location.href = "../vendas/venda-descricao.html";
+      });
     });
 
     // Se for um carrossel, inicializa o Owl Carousel APÓS os itens serem adicionados
