@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Livraria Cultura - Minha Conta</title>
-    <!--bootstrap-->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -13,7 +12,6 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
       rel="stylesheet"
     />
-    <!-- fonte-->
     <link
       href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap"
       rel="stylesheet"
@@ -23,227 +21,218 @@
       rel="stylesheet"
     />
 
-    <!-- css global e de cada pagina-->
     <link rel="stylesheet" href="../../css/style.css" />
     <link rel="stylesheet" href="../../css/minhaConta.css" />
   </head>
   <body>
-    <div id="navbar-container" class="fixed-top w-100"></div>
+    <div id="navbar-container" class="fixed-top w-100 "></div>
 
-    <div class="container my-4 pt-4">
+    <div class="container my-4 pt-4 mt-5 mt-md-0">
       <div class="d-flex align-items-center">
         <h2 class="mb-2 me-4 text-dark">Minha Conta</h2>
         <div class="flex-grow-1 border-top border-2"></div>
       </div>
     </div>
 
-    <!--Corpo da Pagina-->
-    <div class="container mt-3 border border-2 rounded shadow p-4">
-      <div class="container mt-5">
-        <div
-          class="d-flex align-items-center justify-content-between flex-wrap"
-        >
-          <!-- Avatar + Nome -->
-    <div class="d-flex align-items-center flex-shrink-0 me-5">
-  <img
-    id="foto-perfil"
-    src="https://via.placeholder.com/64?text=👤"
-    class="rounded-circle me-3 tm-img bg-secondary"
-    alt="Usuário"
-  />
-  <div class="d-flex flex-column justify-content-center">
-    <span class="fw-medium fs-5 mb-0">Olá!</span>
-    <span class="fw-medium fs-5 mb-0" id="saudacao-nome">usuário</span>
-  </div>
-</div>
-          <!-- Abas -->
-          <ul class="nav nav-tabs flex-grow-1 border-0 ms-auto">
-            <li class="nav-item" role="presentation">
-              <a
-                class="nav-link active text-muted"
-                id="tab-dados-tab"
-                data-bs-toggle="tab"
-                href="#tab-dados"
-                role="tab"
-                aria-controls="tab-dados"
-                aria-selected="true"
-                >Dados pessoais</a
-              >
-            </li>
-            <li class="nav-item" role="presentation">
-              <a
-                class="nav-link text-muted"
-                id="tab-enderecos-tab"
-                data-bs-toggle="modal"
-                data-bs-target="#modalEnderecos"
-                href="#"
-                role="tab"
-                aria-selected="false"
-                >Endereços</a
-              >
-            </li>
-            <li class="nav-item" role="presentation">
-              <a
-                class="nav-link text-muted"
-                id="tab-auth-tab"
-                data-bs-toggle="tab"
-                href="#tab-auth"
-                role="tab"
-                aria-controls="tab-auth"
-                aria-selected="false"
-                >Autenticação</a
-              >
-            </li>
-            <li class="nav-item" role="presentation">
-              <a
-                class="nav-link text-muted"
-                id="tab-cartoes-tab"
-                data-bs-toggle="tab"
-                href="#tab-cartoes"
-                role="tab"
-                aria-controls="tab-cartoes"
-                aria-selected="false"
-                >Cartões</a
-              >
-            </li>
-            <li class="nav-item" role="presentation">
-              <a
-                class="nav-link text-muted"
-                id="tab-creditos-tab"
-                data-bs-toggle="tab"
-                href="#tab-creditos"
-                role="tab"
-                aria-controls="tab-creditos"
-                aria-selected="false"
-                >Meus Créditos</a
-              >
-            </li>
-            <li class="nav-item" role="presentation">
-              <a
-                class="nav-link text-muted"
-                id="tab-pedidos-tab"
-                data-bs-toggle="tab"
-                href="#tab-pedidos"
-                role="tab"
-                aria-controls="tab-pedidos"
-                aria-selected="false"
-                >Pedidos</a
-              >
-            </li>
-            <li class="nav-item" role="presentation">
-              <a class="nav-link text-muted" href="#" id="btn-sair">Sair</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <!--dados pessoais-->
-      <div class="container my-5">
-        <h2 class="mb-4 fw-bolder">Dados pessoais</h2>
-        <div class="container">
-  <div class="row">
-    <!-- Coluna dos dados (formulário) -->
-    <div class="col-md-8">
-      <div class="border border-2 rounded p-4 h-100">
-        <div class="row g-3 fs-5 fw-medium">
-          <!-- Campos do formulário -->
-          <div class="col-md-6">
-            <small class="text-dark fw-bold">Nome</small>
-            <p class="mb-0 small text-muted" id="exibir-nome">-</p>
-            <input class="form-control d-none" id="input-nome" type="text" placeholder="Ex: João" />
-          </div>
-          <div class="col-md-6">
-            <small class="text-dark fw-bold">Sobrenome</small>
-            <p class="mb-0 small text-muted" id="exibir-sobrenome">-</p>
-            <input class="form-control d-none" id="input-sobrenome" type="text" placeholder="Ex: Silva" />
-          </div>
-          <div class="col-md-6">
-            <small class="text-dark fw-bold">Data de nascimento</small>
-            <p class="mb-0 small text-muted" id="exibir-nascimento">-</p>
-            <input class="form-control d-none" id="input-nascimento" type="text" placeholder="Ex: 01/01/2000"/>
-          </div>
-          <div class="col-md-6">
-            <small class="text-dark fw-bold">Gênero</small>
-            <p class="mb-0 small text-muted" id="exibir-genero">-</p>
-            <div id="input-genero" class="d-none">
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="genero" id="genero-m" value="Masculino">
-                <label class="form-check-label" for="genero-m">Masculino</label>
+    <div class="container mt-3 mb-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8 border border-2 rounded shadow p-4">
+          <div
+            class="d-flex align-items-center justify-content-between flex-wrap"
+          >
+            <div class="d-flex align-items-center flex-shrink-0 me-5">
+              <img
+                id="foto-perfil"
+                src="https://via.placeholder.com/64?text=👤"
+                class="rounded-circle me-3 tm-img bg-secondary"
+                alt="Usuário"
+              />
+              <div class="d-flex flex-column justify-content-center">
+                <span class="fw-medium fs-5 mb-0">Olá!</span>
+                <span class="fw-medium fs-5 mb-0" id="saudacao-nome">usuário</span>
               </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="genero" id="genero-f" value="Feminino">
-                <label class="form-check-label" for="genero-f">Feminino</label>
+            </div>
+            <ul class="nav nav-tabs flex-grow-1 border-0 ms-auto">
+              <li class="nav-item" role="presentation">
+                <a
+                  class="nav-link active text-muted"
+                  id="tab-dados-tab"
+                  data-bs-toggle="tab"
+                  href="#tab-dados"
+                  role="tab"
+                  aria-controls="tab-dados"
+                  aria-selected="true"
+                  >Dados pessoais</a
+                >
+              </li>
+              <li class="nav-item d-none d-sm-block" role="presentation">
+                <a
+                  class="nav-link text-muted"
+                  id="tab-enderecos-tab"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalEnderecos"
+                  href="#"
+                  role="tab"
+                  aria-selected="false"
+                  >Endereços</a
+                >
+              </li>
+              <li class="nav-item d-none d-sm-block" role="presentation">
+                <a
+                  class="nav-link text-muted"
+                  id="tab-auth-tab"
+                  data-bs-toggle="tab"
+                  href="#tab-auth"
+                  role="tab"
+                  aria-controls="tab-auth"
+                  aria-selected="false"
+                  >Autenticação</a
+                >
+              </li>
+              <li class="nav-item d-none d-sm-block" role="presentation">
+                <a
+                  class="nav-link text-muted"
+                  id="tab-cartoes-tab"
+                  data-bs-toggle="tab"
+                  href="#tab-cartoes"
+                  role="tab"
+                  aria-controls="tab-cartoes"
+                  aria-selected="false"
+                  >Cartões</a
+                >
+              </li>
+              <li class="nav-item d-none d-sm-block" role="presentation">
+                <a
+                  class="nav-link text-muted"
+                  id="tab-creditos-tab"
+                  data-bs-toggle="tab"
+                  href="#tab-creditos"
+                  role="tab"
+                  aria-controls="tab-creditos"
+                  aria-selected="false"
+                  >Meus Créditos</a
+                >
+              </li>
+              <li class="nav-item" role="presentation">
+                <a
+                  class="nav-link text-muted"
+                  id="tab-pedidos-tab"
+                  data-bs-toggle="tab"
+                  href="#tab-pedidos"
+                  role="tab"
+                  aria-controls="tab-pedidos"
+                  aria-selected="false"
+                  >Pedidos</a
+                >
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link text-muted" href="#" id="btn-sair">Sair</a>
+              </li>
+            </ul>
+          </div>
+          <div class="my-5">
+            <h2 class="mb-4 fw-bolder">Dados pessoais</h2>
+            <div class="row">
+              <div class="col-md-8">
+                <div class="border border-2 rounded p-4 h-100">
+                  <div class="row g-3 fs-5 fw-medium">
+                    <div class="col-md-6">
+                      <small class="text-dark fw-bold">Nome</small>
+                      <p class="mb-0 small text-muted" id="exibir-nome">-</p>
+                      <input class="form-control d-none" id="input-nome" type="text" placeholder="Ex: João" />
+                    </div>
+                    <div class="col-md-6">
+                      <small class="text-dark fw-bold">Sobrenome</small>
+                      <p class="mb-0 small text-muted" id="exibir-sobrenome">-</p>
+                      <input class="form-control d-none" id="input-sobrenome" type="text" placeholder="Ex: Silva" />
+                    </div>
+                    <div class="col-md-6">
+                      <small class="text-dark fw-bold">Data de nascimento</small>
+                      <p class="mb-0 small text-muted" id="exibir-nascimento">-</p>
+                      <input class="form-control d-none" id="input-nascimento" type="text" placeholder="Ex: 01/01/2000"/>
+                    </div>
+                    <div class="col-md-6">
+                      <small class="text-dark fw-bold">Gênero</small>
+                      <p class="mb-0 small text-muted" id="exibir-genero">-</p>
+                      <div id="input-genero" class="d-none">
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="genero" id="genero-m" value="Masculino">
+                          <label class="form-check-label" for="genero-m">Masculino</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="genero" id="genero-f" value="Feminino">
+                          <label class="form-check-label" for="genero-f">Feminino</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <small class="text-dark fw-bold">Email</small>
+                      <p class="mb-0 small text-muted" id="exibir-email">-</p>
+                    </div>
+                    <div class="col-md-6">
+                      <small class="text-dark fw-bold">Senha</small>
+                      <p class="mb-0 small text-muted" id="exibir-senha">-</p>
+                    </div>
+                    <div class="col-md-6">
+                      <small class="text-dark fw-bold">Telefone</small>
+                      <p class="mb-0 small text-muted" id="exibir-telefone">-</p>
+                      <input class="form-control d-none" id="input-telefone" type="text" placeholder="Ex: (11) 91234-5678"  />
+                    </div>
+                    <div class="col-md-6">
+                      <small class="text-dark fw-bold">CEP</small>
+                      <p class="mb-0 small text-muted" id="exibir-cep">-</p>
+                      <input class="form-control d-none" id="input-cep" type="text" placeholder="Ex: 12345-678"  />
+                    </div>
+                    <div class="col-md-6">
+                      <small class="text-dark fw-bold">Cidade</small>
+                      <p class="mb-0 small text-muted" id="exibir-cidade">-</p>
+                      <input class="form-control d-none" id="input-cidade" type="text" placeholder="Ex: São Paulo" />
+                    </div>
+                    <div class="col-md-6">
+                      <small class="text-dark fw-bold">Estado</small>
+                      <p class="mb-0 small text-muted" id="exibir-estado">-</p>
+                      <input class="form-control d-none" id="input-estado" type="text" placeholder="Ex: SP" />
+                    </div>
+                    <div class="col-md-6">
+                      <small class="text-dark fw-bold">Endereço Principal</small>
+                      <p class="mb-0 small text-muted" id="exibir-endereco">-</p>
+                      <input class="form-control d-none" id="input-endereco" type="text" placeholder="Ex: Rua Exemplo 123, Centro" />
+                    </div>
+                  </div>
+
+                  <div class="mt-4 d-flex justify-content-end" id="botoes-edicao">
+                    <a href="#" id="btn-editar" class="text-decoration-underline text-info small fw-bold">Editar</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 mt-3 mt-md-0">
+                <div class="border border-2 rounded p-3 h-100">
+                  <h6 class="text-muted">Newsletter</h6>
+                  <p class="small text-muted mb-2">
+                    Deseja receber e-mails com promoções?
+                  </p>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="newsletterCheck"
+                    />
+                    <label
+                      class="form-check-label small text-secondary"
+                      for="newsletterCheck"
+                    >
+                      Quero receber e-mails com promoções.
+                    </label>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-md-6">
-            <small class="text-dark fw-bold">Email</small>
-            <p class="mb-0 small text-muted" id="exibir-email">-</p>
-          </div>
-          <div class="col-md-6">
-            <small class="text-dark fw-bold">Senha</small>
-            <p class="mb-0 small text-muted" id="exibir-senha">-</p>
-          </div>
-          <div class="col-md-6">
-            <small class="text-dark fw-bold">Telefone</small>
-            <p class="mb-0 small text-muted" id="exibir-telefone">-</p>
-            <input class="form-control d-none" id="input-telefone" type="text" placeholder="Ex: (11) 91234-5678"  />
-          </div>
-          <div class="col-md-6">
-            <small class="text-dark fw-bold">CEP</small>
-            <p class="mb-0 small text-muted" id="exibir-cep">-</p>
-            <input class="form-control d-none" id="input-cep" type="text" placeholder="Ex: 12345-678"  />
-          </div>
-          <div class="col-md-6">
-            <small class="text-dark fw-bold">Cidade</small>
-            <p class="mb-0 small text-muted" id="exibir-cidade">-</p>
-            <input class="form-control d-none" id="input-cidade" type="text" placeholder="Ex: São Paulo" />
-          </div>
-          <div class="col-md-6">
-            <small class="text-dark fw-bold">Estado</small>
-            <p class="mb-0 small text-muted" id="exibir-estado">-</p>
-            <input class="form-control d-none" id="input-estado" type="text" placeholder="Ex: SP" />
-          </div>
-          <div class="col-md-6">
-            <small class="text-dark fw-bold">Endereço Principal</small>
-            <p class="mb-0 small text-muted" id="exibir-endereco">-</p>
-            <input class="form-control d-none" id="input-endereco" type="text" placeholder="Ex: Rua Exemplo 123, Centro" />
-          </div>
-        </div>
-
-        <!-- Links de edição -->
-        <div class="mt-4 d-flex justify-content-end" id="botoes-edicao">
-          <a href="#" id="btn-editar" class="text-decoration-underline text-info small fw-bold">Editar</a>
         </div>
       </div>
-    </div>
-
-    <!-- Newsletter ao lado -->
-    <div class="col-md-4">
-      <div class="border border-2 rounded p-3">
-        <h6 class="text-muted">Newsletter</h6>
-        <p class="small text-muted mb-2">
-          Deseja receber e-mails com promoções?
-        </p>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            id="newsletterCheck"
-          />
-          <label
-            class="form-check-label small text-secondary"
-            for="newsletterCheck"
-          >
-            Quero receber e-mails com promoções.
-          </label>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 
-      <!--modal de teste endereço-->
       <div
         class="modal fade"
         id="modalEnderecos"
@@ -269,7 +258,6 @@
                 Aqui você poderá visualizar e alterar seus endereços
                 cadastrados.
               </p>
-              <!-- Aqui você pode inserir um formulário ou lista de endereços -->
               <div class="mb-3">
                 <label class="form-label">Endereço atual</label>
                 <input
@@ -311,7 +299,5 @@
     <script src="../navbar.js"></script>
     <script src="../rodape.js"></script>
     <script src="minha-conta.js" type="module"></script>
-   
-
   </body>
 </html>

@@ -1,9 +1,24 @@
 <div class="container-fluid bg-info text-white py-2 z-1030">
-  <div class="container d-flex justify-content-between align-items-center">
-    <!-- Logo + Busca -->
-    <div class="d-flex align-items-center flex-grow-1 me-4">
-      <h1 class="mb-0 me-4 text-nowrap logo fw-black fw-bold"><a href="/view/tela-inicial/tela-inicial.html" class=" text-white text-decoration-none"> livraria cultura</h1></a>
-      <div class="input-group search-bar flex-grow-1 tanho-navbar">
+  <div class="container d-flex flex-wrap align-items-center">
+    <div class="d-flex w-100 d-md-none justify-content-between align-items-center mb-2">
+      <button class="btn btn-info text-white p-0 me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <i class="bi bi-list fs-3"></i>
+      </button>
+      <h1 class="mb-0 text-nowrap logo fw-black fw-bold flex-grow-1 text-center">
+        <a href="/view/tela-inicial/tela-inicial.html" class="text-white text-decoration-none">livraria cultura</a>
+      </h1>
+      <div class="position-relative ms-3">
+        <i class="bi bi-cart fs-2"></i>
+        <span class="cart-badge bg-danger text-white">0</span>
+      </div>
+    </div>
+
+    <div class="d-none d-md-flex flex-grow-1 justify-content-between align-items-center w-100">
+      <h1 class="mb-0 me-4 text-nowrap logo fw-black fw-bold flex-shrink-0">
+        <a href="/view/tela-inicial/tela-inicial.html" class="text-white text-decoration-none">livraria cultura</a>
+      </h1>
+
+      <div class="input-group search-bar flex-grow-1 mx-3">
         <select
           class="form-select filtro-site rounded-0 shadow-none"
           aria-label="Filtro de busca"
@@ -28,66 +43,84 @@
           <i class="bi bi-search"></i>
         </button>
       </div>
+
+      <div class="d-flex align-items-center flex-shrink-0 ms-auto">
+        <i class="bi bi-person-circle fs-3 me-2 text-secondary"></i>
+        <div class="d-flex flex-column align-items-start">
+          <div class="fw-medium mb-1 text-nowrap">
+            Olá <span id="name-user-span">bem-vindo</span>
+          </div>
+          <div class="dropdown">
+            <button
+              class="btn btn-info text-white fw-medium dropdown-toggle p-0"
+              type="button"
+              id="dropdownConta"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              style="font-size: 0.9rem"
+            >
+              Entrar / Cadastrar
+            </button>
+            <ul
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="dropdownConta"
+            >
+              <li>
+                <a id="menu-entrar-cadastrar"
+                  class="dropdown-item text-primary fw-bold"
+                  href="/view/login/login.html"
+                  >Entrar / Cadastrar</a
+                >
+              </li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="#">Meus pedidos</a></li>
+              <li><a class="dropdown-item" href="#">Meus eBooks</a></li>
+              <li><a class="dropdown-item" href="#">Meus pontos +Cultura</a></li>
+              <li>
+                <a class="dropdown-item" href="/view/minha-conta/minha-conta.html"
+                  >Minha conta</a
+                >
+              </li>
+              <li><a class="dropdown-item" href="#">Lista de desejos</a></li>
+              <li><a class="dropdown-item" href="#" id="sairConta">Sair</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="position-relative ms-4">
+          <i class="bi bi-cart fs-2"></i>
+          <span class="cart-badge bg-danger text-white">0</span>
+        </div>
+      </div>
     </div>
-
-    <!-- Ícones usuário + carrinho -->
-    <div class="d-flex align-items-center">
-      <i class="bi bi-person-circle fs-3 me-2 text-secondary"></i>
-      <div class="d-flex flex-column align-items-start">
-        <!-- Texto fixo com nome -->
-        <div class="fw-medium mb-1">
-          Olá <span id="name-user-span">bem-vindo</span>
-        </div>
-
-        <!-- Dropdown Bootstrap abaixo -->
-        <div class="dropdown">
-          <button
-            class="btn btn-info text-white fw-medium dropdown-toggle p-0"
-            type="button"
-            id="dropdownConta"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            style="font-size: 0.9rem"
-          >
-            Entrar / Cadastrar
-          </button>
-          <ul
-            class="dropdown-menu dropdown-menu-end"
-            aria-labelledby="dropdownConta"
-          >
-            <li>
-              <a id="menu-entrar-cadastrar"
-                class="dropdown-item text-primary fw-bold"
-                href="/view/login/login.html"
-                >Entrar / Cadastrar</a
-              >
-            </li>
-
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Meus pedidos</a></li>
-            <li><a class="dropdown-item" href="#">Meus eBooks</a></li>
-            <li><a class="dropdown-item" href="#">Meus pontos +Cultura</a></li>
-            <li>
-              <a class="dropdown-item" href="/view/minha-conta/minha-conta.html"
-                >Minha conta</a
-              >
-            </li>
-            <li><a class="dropdown-item" href="#">Lista de desejos</a></li>
-            <li><a class="dropdown-item" href="#" id="sairConta">Sair</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Carrinho -->
-      <div class="position-relative ms-4">
-        <i class="bi bi-cart fs-2"></i>
-        <span class="cart-badge bg-danger text-white">0</span>
-      </div>
+    
+    <div class="input-group search-bar w-100 d-md-none mt-2">
+      <select
+        class="form-select filtro-site rounded-0 shadow-none"
+        aria-label="Filtro de busca"
+      >
+        <option selected>TODO O SITE</option>
+        <option value="livros">Livros</option>
+        <option value="filmes">Filmes</option>
+        <option value="ebooks">eBooks</option>
+        <option value="musica">Música</option>
+        <option value="papelaria">Papelaria & Etc</option>
+        <option value="brinquedos">Brinquedos</option>
+        <option value="geek">Geek</option>
+        <option value="kobo">Kobo</option>
+        <option value="cultura">Cultura em curso</option>
+      </select>
+      <input
+        type="text"
+        class="form-control campo-pesquisa rounded-0 shadow-none"
+        placeholder="Buscar na Livraria Cultura"
+      />
+      <button class="btn btn-light rounded-0 shadow-none">
+        <i class="bi bi-search"></i>
+      </button>
     </div>
   </div>
 
-  <!-- Sub-barra -->
-  <div class="container-fluid sub-bar bg-info text-white">
+  <div class="container-fluid sub-bar bg-info text-white d-none d-md-block">
     <div class="container d-flex justify-content-center py-1">
       <a href="#" class="me-3 text-white text-decoration-none fs-6"
         >Atendimento e Televendas</a
@@ -108,10 +141,85 @@
   </div>
 </div>
 
-<!-- Categorias -->
+<div class="offcanvas offcanvas-start bg-info text-white" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+      <li class="nav-item">
+        <a class="nav-link active text-white" aria-current="page" href="/view/login/login.html">Entrar / Cadastrar</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="/view/minha-conta/minha-conta.html">Minha Conta</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">Meus Pedidos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">Meus eBooks</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">Meus pontos +Cultura</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">Lista de desejos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#" id="sairContaOffcanvas">Sair</a>
+      </li>
+      <li><hr class="dropdown-divider text-white" /></li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">Atendimento e Televendas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">Atendimento Empresas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">Sebo Cultura</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">Cultura Pass</a>
+      </li>
+      <li><hr class="dropdown-divider text-white" /></li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">Compre por categoria</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">Literatura Brasileira</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">Literatura Internacional</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">Infanto juvenil</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">Auto ajuda</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">Biografias</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">HQs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">Negócios</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">Novidades</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">Mais Vendidos</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
 <div
   id="categoriasBar"
-  class="container-fluid bg-light border-bottom shadow-sm small"
+  class="container-fluid bg-light border-bottom shadow-sm small d-none d-md-block"
 >
   <div class="container d-flex align-items-center py-2">
     <i class="bi bi-list me-3 fs-4 text-info"></i>
@@ -128,18 +236,18 @@
       <option value="vendas">&#xF618; Atendimento de vendas</option>
     </select>
 
-    <a href="#" class="me-3 text-muted text-decoration-none"
+    <a href="#" class="me-3 text-muted text-decoration-none d-none d-md-block"
       >Literatura Brasileira</a
     >
-    <a href="#" class="me-3 text-muted text-decoration-none"
+    <a href="#" class="me-3 text-muted text-decoration-none d-none d-md-block"
       >Literatura Internacional</a
     >
-    <a href="#" class="me-3 text-muted text-decoration-none">Infanto juvenil</a>
-    <a href="#" class="me-3 text-muted text-decoration-none">Auto ajuda</a>
-    <a href="#" class="me-3 text-muted text-decoration-none">Biografias</a>
-    <a href="#" class="me-3 text-muted text-decoration-none">HQs</a>
-    <a href="#" class="me-3 text-muted text-decoration-none">Negócios</a>
-    <a href="#" class="me-3 text-muted text-decoration-none">Novidades</a>
-    <a href="#" class="me-3 text-muted text-decoration-none">Mais Vendidos</a>
+    <a href="#" class="me-3 text-muted text-decoration-none d-none d-md-block">Infanto juvenil</a>
+    <a href="#" class="me-3 text-muted text-decoration-none d-none d-md-block">Auto ajuda</a>
+    <a href="#" class="me-3 text-muted text-decoration-none d-none d-md-block">Biografias</a>
+    <a href="#" class="me-3 text-muted text-decoration-none d-none d-md-block">HQs</a>
+    <a href="#" class="me-3 text-muted text-decoration-none d-none d-md-block">Negócios</a>
+    <a href="#" class="me-3 text-muted text-decoration-none d-none d-md-block">Novidades</a>
+    <a href="#" class="me-3 text-muted text-decoration-none d-none d-md-block">Mais Vendidos</a>
   </div>
 </div>

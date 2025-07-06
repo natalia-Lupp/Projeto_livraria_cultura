@@ -30,9 +30,12 @@ async function renderizarCards(
 
     livrosParaRenderizar.forEach((livro) => {
       const col = document.createElement("div");
-      // Se for um carrossel, cada item precisa da classe 'item' do Owl Carousel
-      // Caso contrário, usa as classes de coluna do Bootstrap
-      col.className = isCarousel ? "item" : "col-2 mb-4 ";
+      // CORREÇÃO AQUI:
+      // Se for um carrossel, cada item precisa da classe 'item' do Owl Carousel.
+      // Caso contrário (para as seções normais), não adicione classes de coluna explícitas.
+      // A classe 'g-4' na div 'row' pai já cuida do espaçamento entre os cards.
+      // A classe 'mb-4' pode ser usada para margem inferior se seus cards precisarem de mais espaço vertical individual.
+      col.className = isCarousel ? "item" : "mb-4"; // Removido "col-2"
 
       col.innerHTML = `
         <div class="card card-uniform-height text-center shadow p-3 mb-5 bg-white rounded">
@@ -63,7 +66,7 @@ async function renderizarCards(
 
       const btn = col.querySelector(".btn-detalhes-livro");
    btn.addEventListener("click", () => {
-  console.log("Livro selecionado para localStorage:", livro); // ADICIONE ESTA LINHA
+  console.log("Livro selecionado para localStorage:", livro);
   localStorage.setItem("livroSelecionado", JSON.stringify(livro));
   window.location.href = "../vendas/venda-descricao.html";
 });

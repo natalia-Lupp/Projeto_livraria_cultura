@@ -42,7 +42,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // <p><strong>Sinopse:</strong> <span id="sinopse"></span></p>
   // Como a API de busca não fornece sinopse, vamos deixar como "Não disponível" por enquanto,
   // a menos que você adicione essa informação.
-  setText("sinopse", livro.sinopse || "Sinopse não disponível.");
+  const sinopsePadrao = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`;
+
+setText("sinopse", livro.sinopse?.trim() || sinopsePadrao);
+
 
 
   // Preenchendo a tabela de detalhes
@@ -183,4 +188,25 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
       console.warn("Célula de Peso da tabela não encontrada.");
   }
+
+  // Preenche nome no radio
+  // Preenche nome no radio
+const editoraRadioLabel = document.getElementById("livro-editora-radio");
+if (editoraRadioLabel) {
+  editoraRadioLabel.textContent = livro.product_byline || "Editora desconhecida";
+}
+
+
+  // Preço do eBook (mais barato, no radio)
+  const precoEbook = document.getElementById("preco-ebook");
+  if (precoEbook) {
+    precoEbook.textContent = livro.ebook_price || "R$ 19,90";
+  }
+
+  // Preço final (principal)
+  const precoFinal = document.getElementById("livro-preco-final");
+  if (precoFinal) {
+    precoFinal.textContent = livro.product_price || "R$ 29,90";
+  }
+  
 });

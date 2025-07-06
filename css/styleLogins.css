@@ -1,37 +1,132 @@
+/* ===================================================== */
+/* ESTILOS GERAIS – Aplicáveis a todas as telas */
+/* ===================================================== */
+
 body {
   background-image: url("../img/fundo_login.png");
   background-repeat: no-repeat;
-  background-size: cover; /* ou 'cover' se quiser preencher a tela */
-  background-position: center center; /* centraliza mais verticalmente */
+  background-size: cover;
+  background-position: center center;
   background-attachment: fixed;
   min-height: 100vh;
+  margin: 0;
+
+  /* Centralização vertical e horizontal */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.login-box {
+/* ===================================================== */
+/* CONTAINERS GERAIS */
+/* ===================================================== */
+
+.login-box,
+.email-box {
   max-width: 500px;
-  margin: 100px auto;
-  padding: 40px;
+  width: 100%;
+  background-color: #ffffff;
   text-align: center;
-  margin-left: 360px;
 }
 
+/* Padding aplicado via Bootstrap (p-4), mas pode ser reforçado se necessário */
+.login-box {
+  padding: 40px;
+}
+
+/* ===================================================== */
+/* CAMPOS DE FORMULÁRIO */
+/* ===================================================== */
+
+/* Limita a largura do input */
+.input-max-width {
+  max-width: 350px;
+  width: 100%;
+}
+
+/* Limita a largura dos botões e alinha */
+.button-container {
+  max-width: 350px;
+  width: 100%;
+}
+
+/* ===================================================== */
+/* LINHA DIVISÓRIA (HR) */
+/* ===================================================== */
+
+.linha-login {
+  border-top: 1px solid;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #dee2e6;
+}
+
+/* ===================================================== */
+/* BOTÕES PADRÃO */
+/* ===================================================== */
+
+/* Estilo geral para todos os botões (Bootstrap já aplica boa parte) */
+.btn {
+  font-size: 1.1rem;
+  border-radius: 0.3rem;
+}
+
+/* Estilo para o botão "Entrar com Facebook" */
 .btn-facebook {
   background-color: #3b5998;
+  border-color: #3b5998;
+  color: white;
 }
 
 .btn-facebook:hover {
   background-color: #2d4373;
+  border-color: #2d4373;
 }
 
-.btn-info-custom {
-  background-color: #17a2b8;
-}
-.btn-info-custom:hover {
-  background-color: #138496;
+/* Estilo de botão principal usado em login, se desejar cor personalizada */
+.btn-principal {
+  background-color: #20c997;
+  border-color: #20c997;
+  color: white;
+  line-height: 1.4;
 }
 
-.linha-login {
-  border-top: 1px solid;
-  width: 100%;
-  margin: 0 auto 15px;
+.btn-principal:hover {
+  background-color: #1abc9c;
+  border-color: #1abc9c;
+}
+
+/* ===================================================== */
+/* MEDIA QUERY – TELAS PEQUENAS (CELULARES) */
+/* ===================================================== */
+
+@media (max-width: 575.98px) {
+  .login-box,
+  .email-box {
+    max-width: 400px;
+    width: 100%;
+    padding: 1.5rem !important;
+    margin: 2rem auto;
+  }
+
+  .input-max-width,
+  .button-container {
+    max-width: 100%;
+  }
+
+  .button-container {
+    padding: 0 5px;
+  }
+
+  /* Telas muito pequenas (< 375px) */
+  @media (max-width: 375px) {
+    .btn {
+      font-size: 0.95rem;
+      padding: 0.6rem 0.8rem;
+    }
+
+    .text-primary {
+      font-size: 0.9rem;
+    }
+  }
 }

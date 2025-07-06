@@ -2,7 +2,7 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <title>Botões de Login</title>
+    <title>Informe seu E-mail</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
@@ -19,9 +19,9 @@
   <body
     class="bg-login d-flex justify-content-center align-items-center min-vh-100"
   >
-    <div class="text-center w-100" style="max-width: 570px">
+    <div class="email-box text-center p-4 rounded-3">
       <h4 class="mb-3 text-muted fw-bold">POR FAVOR INFORME SEU EMAIL</h4>
-      <hr class="linha-login text-secondary mx-auto my-4" />
+      <hr class="linha-login border-secondary opacity-25 mx-auto my-4" />
 
       <input
         type="email"
@@ -31,14 +31,14 @@
       />
 
       <div
-        class="d-flex justify-content-between align-items-center mt-4 mx-auto px-3 button-container"
+        class="d-flex justify-content-between align-items-center mt-4 mx-auto button-container"
       >
         <a href="login.html" class="text-decoration-none text-primary fw-bold">
           <i class="bi bi-arrow-left"></i> Voltar
         </a>
         <button
           type="button"
-          class="btn btn-info-custom text-white fw-bold px-4"
+          class="btn btn-info fw-bold px-4 text-white"
           id="confirmarEmail"
         >
           Confirmar
@@ -52,7 +52,7 @@
         $("#confirmarEmail").click(function () {
           const email = $("#emailInput").val().trim();
           const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-         
+
           if (!emailValido) {
             $("#emailInput").addClass("is-invalid");
             return;
@@ -61,10 +61,10 @@
           $("#emailInput").removeClass("is-invalid");
 
           // Atualiza dados existentes ou cria novos
-          //let cliente = new Cliente();     
+          //let cliente = new Cliente();
           //cliente.email = email;
-          localStorage.setItem(email, JSON.stringify({email: email}));
-          window.location.href = "senhaLogin.html?email="+email;
+          localStorage.setItem(email, JSON.stringify({ email: email }));
+          window.location.href = "senhaLogin.html?email=" + email;
         });
       });
     </script>

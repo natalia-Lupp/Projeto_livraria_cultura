@@ -2,9 +2,8 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Livraria Cultura - Minha Conta</title>
-     <!--bootstrap-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -13,7 +12,6 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
       rel="stylesheet"
     />
-    <!-- fonte-->
     <link
       href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap"
       rel="stylesheet"
@@ -22,154 +20,189 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
-
-    <!-- css global e de cada pagina-->
     <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/venda.css" />
   </head>
   <body>
     <div id="navbar-container" class="fixed-top w-100"></div>
 
-    <div class="container py-5">
-      <div class="row">
-        <!-- Capa do Livro -->
-<div class="col-md-3 text-center">
-  <img id="livro-capa" src="" class="img-fluid mb-3" alt="" />
-  <span class="badge bg-danger">Livro Físico</span>
-  <p class="mt-2">
-    <strong>Editora:</strong> <a href="#" id="livro-editora">-</a>
-  </p>
-</div>
+    <div class="container mt-5 py-4">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8 pt-4 mt-5 mt-md-0">
+          <h2 class="text-muted text-break mb-4" id="livro-titulo">
+            Título do Livro
+          </h2>
 
-<!-- Informações do Produto -->
-<div class="col-md-6">
-  <h3 class="mb-3" id="livro-titulo">Título</h3>
-  <div class="border p-3 bg-white">
-    <div class="d-flex justify-content-between">
-      <div>
-        <p><strong>Livraria Cultura</strong></p>
-        <p id="livro-preco-base">R$ --,--</p>
-      </div>
-      <div>
-        <p><strong>eBook</strong></p>
-        <p>R$ 31,90</p>
-      </div>
-    </div>
-    <h4 class="text-success" id="livro-preco-final">R$ --,--</h4>
-    <button class="btn btn-warning w-100">ADICIONAR AO CARRINHO</button>
-  </div>
-</div>
+          <div class="row">
+            <div class="col-12 col-md-4 text-center text-md-start mb-4 mb-md-0">
+              <div class="position-relative d-inline-block">
+                <span
+                  class="badge bg-danger position-absolute top-0 start-0 m-2 z-1"
+                  >Livro Físico</span
+                >
+                <img
+                  id="livro-capa"
+                  src=""
+                  class="img-fluid rounded shadow-sm tamanho-250"
+                  alt="Capa do Livro"
+                />
+              </div>
+            </div>
 
-          <!-- Calcular Frete -->
-          <div class="mt-3 border p-3 bg-white">
-            <form class="d-flex">
-              <input
-                type="text"
-                class="form-control me-2"
-                placeholder="00000-000"
-              />
-              <button class="btn btn-secondary" type="submit">OK</button>
-            </form>
-            <small class="text-muted"
-              >Calcule o valor do frete e prazo de entrega para a sua
-              região</small
-            >
+            <div class="col-12 col-md-8">
+              <div class="border p-4 bg-white shadow-sm rounded mb-3">
+                <div class="d-flex align-items-center gap-3 flex-wrap">
+                  <div
+                    class="border rounded p-2 d-flex flex-column justify-content-between flex-grow-1 tamanho-150"
+                  >
+                    <div class="form-check d-flex align-items-center mb-2">
+                      <input
+                        class="form-check-input me-2 ms-0"
+                        type="radio"
+                        name="formato"
+                        id="radioEbook"
+                        checked
+                      />
+                      <label
+                        class="form-check-label text-truncate"
+                        for="radioEbook"
+                      >
+                        <span id="livro-editora-radio" class="fw-bold text-dark"
+                          >Editora</span
+                        >
+                      </label>
+                    </div>
+                    <span id="preco-ebook" class="fw-bold text-dark fs-5"
+                      >R$ 19,90</span
+                    >
+                  </div>
+
+                  <div class="border p-3 rounded shadow-sm flex-fill">
+                    <h4
+                      class="text-success fw-bold mb-3 text-start"
+                      id="livro-preco-final"
+                    >
+                      R$ --,--
+                    </h4>
+                    <button class="btn btn-warning fw-bold w-100 btn-sm">
+                      ADICIONAR AO CARRINHO
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="border p-3 bg-white shadow-sm rounded">
+                <form class="d-flex">
+                  <input
+                    type="text"
+                    class="form-control me-2"
+                    placeholder="00000-000"
+                  />
+                  <button class="btn btn-secondary" type="submit">OK</button>
+                </form>
+                <small class="text-muted d-block mt-2">
+                  Calcule o valor do frete e prazo de entrega para a sua região
+                </small>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Detalhes do Produto -->
-      <hr class="my-5" />
-      <div class="container">
-        <h4 class="mb-4">Detalhes do Produto</h4>
-        <div class="table-responsive">
-            <div class="col-md-12 mt-3">
-  <p><strong>Sinopse:</strong> <span id="sinopse"></span></p>
-</div>
-          <table class="table table-bordered">
-            <tbody>
-              <tr>
-                <th class="bg-light">Autor</th>
-                <td>MIH TANINO</td>
-              </tr>
+    <hr class="my-5" />
+    <div class="container py-4">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8">
+          <h4 class="mb-4"><strong>Informações do Produto</strong></h4>
+          <span id="sinopse"></span>
+
+          <h4 class="mb-4 pt-5">Detalhes do Produto</h4>
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <tbody>
                 <tr>
-                <th class="bg-light">Ano</th>
-                <td>2025</td>
-              </tr>
-              <tr>
-                <th class="bg-light">Edição</th>
-                <td>1</td>
-              </tr>
-              <tr>
-                <th class="bg-light">Origem</th>
-                <td>NACIONAL</td>
-              </tr>
-               <tr>
-                <th class="bg-light">Idioma</th>
-                <td>PORTUGUÊS</td>
-              </tr>
-              <tr>
-                <th class="bg-light">País</th>
-                <td>BRASIL</td>
-              </tr>
-              <tr>
-             <th class="bg-light">EAN</th>
-                <td>9788593448888</td>
-              </tr>
-              <tr>
-                <th class="bg-light">ISBN</th>
-                <td>8593448887</td>
-              </tr>
-              <tr>
-                <th class="bg-light">Formato</th>
-                <td>LIVRO</td>
-              </tr>
-              <tr>
-                <th class="bg-light">Encadernação</th>
-                <td>BROCHURA</td>
-              </tr>
-                <th class="bg-light">Páginas</th>
-                <td>48</td>
-              </tr>
-              <tr>
-                <th class="bg-light">Altura</th>
-                <td>25.5 Cm</td>
-              </tr>
-              <tr>
-                <th class="bg-light">Comprimento</th>
-                <td>1 Cm</td>
-              </tr>
-              <tr>
-                <th class="bg-light">Largura</th>
-                <td>20 Cm</td>
-              </tr>
-              <tr>
-                <th class="bg-light">Peso</th>
-                <td>0.2 Kg</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <!-- Avaliação dos Consumidores -->
-        <hr class="my-5" />
-        <div class="container">
+                  <th class="bg-light">Autor</th>
+                  <td id="autor-table">MIH TANINO</td>
+                </tr>
+                <tr>
+                  <th class="bg-light">Ano</th>
+                  <td id="ano-table">2025</td>
+                </tr>
+                <tr>
+                  <th class="bg-light">Edição</th>
+                  <td id="edicao-table">1</td>
+                </tr>
+                <tr>
+                  <th class="bg-light">Origem</th>
+                  <td id="origem-table">NACIONAL</td>
+                </tr>
+                <tr>
+                  <th class="bg-light">Idioma</th>
+                  <td id="idioma-table">PORTUGUÊS</td>
+                </tr>
+                <tr>
+                  <th class="bg-light">País</th>
+                  <td id="pais-table">BRASIL</td>
+                </tr>
+                <tr>
+                  <th class="bg-light">EAN</th>
+                  <td id="ean-table">9788593448888</td>
+                </tr>
+                <tr>
+                  <th class="bg-light">ISBN</th>
+                  <td id="isbn-table">8593448887</td>
+                </tr>
+                <tr>
+                  <th class="bg-light">Formato</th>
+                  <td id="formato-table">LIVRO</td>
+                </tr>
+                <tr>
+                  <th class="bg-light">Encadernação</th>
+                  <td id="encadernacao-table">BROCHURA</td>
+                </tr>
+                <tr>
+                  <th class="bg-light">Páginas</th>
+                  <td id="paginas-table">48</td>
+                </tr>
+                <tr>
+                  <th class="bg-light">Altura</th>
+                  <td id="altura-table">25.5 Cm</td>
+                </tr>
+                <tr>
+                  <th class="bg-light">Comprimento</th>
+                  <td id="comprimento-table">1 Cm</td>
+                </tr>
+                <tr>
+                  <th class="bg-light">Largura</th>
+                  <td id="largura-table">20 Cm</td>
+                </tr>
+                <tr>
+                  <th class="bg-light">Peso</th>
+                  <td id="peso-table">0.2 Kg</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <hr class="my-5" />
           <h4 class="mb-3">
             Avaliação dos consumidores
             <span class="ms-2 text-info">
               <i class="bi bi-chat-dots-fill"></i>
-              <!-- Ícone de comentário (requer Bootstrap Icons) -->
             </span>
           </h4>
           <p class="text-muted">Este produto ainda não possui avaliações.</p>
         </div>
       </div>
     </div>
- <div id="rodape-container"></div>
+
+    <div id="rodape-container"></div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../navbar.js"></script>
     <script src="../rodape.js"></script>
-    <script src="../vendas/venda-descricao.js"></script>
+    <script src="../../view/vendas/venda-descricao.js"></script>
   </body>
 </html>
-

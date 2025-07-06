@@ -1,0 +1,12 @@
+.container-limitada {
+  max-width: 960px;
+}
+
+.tamanho-150 {
+min-width: 150px;
+}
+tamanho-250
+.tamanho-250 {
+max-width: 250px; 
+height: auto;
+}
