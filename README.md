@@ -28,6 +28,9 @@ Bootstrap:  https://getbootstrap.com/
 Projeto hospedado via github pages que se encontra no link:
 https://natalia-lupp.github.io/Projeto_livraria_cultura/
 
+## Video explicativo de como foi feito o  site
+https://drive.google.com/file/d/1voIQUuHDrL1nnQ2kc8WaB6fGi-Fut42d/view?usp=drive_link
+
 ## Dependências JavaScript
 - **JQuery** - Para realizar animações.
 - **JSON Server** - Para simular uma API Rest. //ver se apaga isso
