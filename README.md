@@ -33,6 +33,10 @@ Bootstrap:  https://getbootstrap.com/
 Caso ocorra o problema das paginas html não estarem sendo mostradas e sim a estrutura de pastas ao iniciar a extenção live server, após acriação do arquivo .gitignore e a estrutura de pastas estiver correta, atualize o projeto com F5 e atualize o live server com o projeto aberto apertando as teclas ALT + R feche o projeto e abra novamente.
 Isso normalmente resolve o problema, caso não funcione desistale e reinstale o live-server.
 
+## Link do site hospedado
+Projeto hospedado via github pages que se encontra no link:
+https://natalia-lupp.github.io/Projeto_livraria_cultura/
+
 ## Checklist | Indicadores de Desempenho (ID) dos Resultados de Aprendizagem (RA)
 
 #### RA1 - Utilizar Frameworks CSS para estilização de elementos HTML e criação de layouts responsivos.
