@@ -15,7 +15,7 @@ Projeto educacional da universidade UTFPR que implementa uma aplicação web ins
 
 - Detalhamento sobre o armazenamento dos dados e suas entidades: [Armazenamento_de_dados.pdf](https://github.com/user-attachments/files/19824876/Natalia_lupp_Armazenamento_de_dados.pdf)
 
-###Design das Telas
+### Design das Telas
 A telas foram desenvolvidas utilizando a plataforma Figma e se encontra no seguinte link: [Prototipo de telas projeto Livraria cultura](https://www.figma.com/design/g9iGwfOHeHWNfYg65KNpr0/Projeto_livraria?node-id=0-1&p=f&t=wgOxMKRZf1vM6AGc-0)
 
 ### Ferramentas de desenvolvimento:
