@@ -3,7 +3,7 @@
 ## 📑 Objetivo
 Projeto educacional da universidade UTFPR que implementa uma aplicação web inspirada na Livraria Cultura, visando o aprendizado prático do uso de frameworks.
 
-### 🚀 Pricipais funcionalidades
+### Pricipais funcionalidades
 - Busca de Livros
 - Exibição de Descrição dos Livros
 - Responsividade e Design
