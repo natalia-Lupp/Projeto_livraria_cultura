@@ -32,7 +32,7 @@ Aplicação foi desenvolvido com:
 
 ### Dependências JavaScript
 - **JQuery** - Para realizar animações.
-- 
+
 - **JSON Server** - Para simular uma API Rest. //ver se apaga isso
 
 ## Site em Produção - GitHub Pages
