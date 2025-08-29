@@ -3,62 +3,58 @@
 ## 📑 Objetivo
 Projeto educacional da universidade UTFPR que implementa uma aplicação web inspirada na Livraria Cultura, visando o aprendizado prático do uso de frameworks.
 
-### Pricipais funcionalidades
-- Busca de Livros
-- Exibição de Descrição dos Livros
-- Responsividade e Design
+### Principais funcionalidades
+- Busca de livros
+- Exibição de descrição dos livros
+- Responsividade e design
 
 ## 💡 Dados do projeto
-- Para um melhor detalhamento do tema do projeto, objtivo, funcionalidades e site e imagens de inspiração: [Detalhes de temas e objetivos e demais dados.pdf](https://github.com/user-attachments/files/19728128/Tema_do_projeto_Natalia_lupp.pdf)
+- Para detalhamento do tema do projeto, objetivo, funcionalidades, site e imagens de inspiração: [Detalhes de temas e objetivos e demais dados.pdf](https://github.com/user-attachments/files/19728128/Tema_do_projeto_Natalia_lupp.pdf)
 
-- Informaçõe detalhadas sobre decisões de design system: [Decisoes_design_system.pdf](https://github.com/user-attachments/files/19824875/Natalia_lupp_decisoes_design_system.pdf)
+- Informações detalhadas sobre decisões de design system: [Decisoes_design_system.pdf](https://github.com/user-attachments/files/19824875/Natalia_lupp_decisoes_design_system.pdf)
 
 - Detalhamento sobre o armazenamento dos dados e suas entidades: [Armazenamento_de_dados.pdf](https://github.com/user-attachments/files/19824876/Natalia_lupp_Armazenamento_de_dados.pdf)
 
 ### Design das Telas
-A telas foram desenvolvidas utilizando a plataforma Figma e se encontra no seguinte link: [Prototipo de telas projeto Livraria cultura](https://www.figma.com/design/g9iGwfOHeHWNfYg65KNpr0/Projeto_livraria?node-id=0-1&p=f&t=wgOxMKRZf1vM6AGc-0)
+As telas foram desenvolvidas utilizando a plataforma Figma e podem ser acessadas no link: [Protótipo de telas do projeto Livraria Cultura](https://www.figma.com/design/g9iGwfOHeHWNfYg65KNpr0/Projeto_livraria?node-id=0-1&p=f&t=wgOxMKRZf1vM6AGc-0)
 
-### Ferramentas de desenvolvimento:
-Aplicação foi desenvolvido com:
-- HTM, CSS e JavaScript.
-  
-- JSON Server, para criação de banco de dados local fake.
-  
-- APIs publica para endereços de usuario e lista de livro.
-  
-- Bootstrap framework.
-  
-- Compoentes web.
+### Ferramentas de desenvolvimento
+A aplicação foi desenvolvida com:
+- HTML, CSS e JavaScript
+- JSON Server, para criação de banco de dados local fake
+- APIs públicas para endereços de usuário e lista de livros
+- Framework Bootstrap
+- Componentes Web
 
 ### Dependências JavaScript
-- **JQuery** - Para realizar animações.
+- **jQuery** – Para realizar animações
+- **JSON Server** – Para simular uma API REST
 
-- **JSON Server** - Para simular uma API Rest. //ver se apaga isso
+## 🌐 Site em Produção
+Projeto hospedado via GitHub Pages:  
+[https://natalia-lupp.github.io/Projeto_livraria_cultura/](https://natalia-lupp.github.io/Projeto_livraria_cultura/)
 
-## Site em Produção - GitHub Pages
-Projeto hospedado via github pages que se encontra no link:
-https://natalia-lupp.github.io/Projeto_livraria_cultura/
-
-
-## Video explicativo de como foi feito o site e funcionamento
-[Video explicativo de funcionalidades e produção](https://drive.google.com/file/d/1voIQUuHDrL1nnQ2kc8WaB6fGi-Fut42d/view?usp=drive_link)
+## 🎥 Vídeo explicativo
+[Vídeo explicativo de funcionalidades e produção](https://drive.google.com/file/d/1voIQUuHDrL1nnQ2kc8WaB6fGi-Fut42d/view?usp=drive_link)
 
 ## ✍️ Autor
-Aluna do quarto sementre do curso de TSI da UTFPR
+Aluna do quarto semestre do curso de TSI da UTFPR  
 
 [Natalia Rodrigues Lupp](https://github.com/natalia-Lupp)
 
 ## Telas da aplicação
-![1_tela_inicial](https://github.com/user-attachments/assets/d7f5ebda-0961-4aaf-b564-d51bb80a6248)
-![2_tela_inicial](https://github.com/user-attachments/assets/9965d515-d0a2-4384-b744-fc55e94efc1f)
-![3_tela_inicial](https://github.com/user-attachments/assets/e49d4f2d-a786-4056-af1e-f7d386f368a0)
+![1_tela inicial](https://github.com/user-attachments/assets/600ce9e3-1a66-4f69-8eff-bde39d183332)  
+![2_tela de detalhes de vendas](https://github.com/user-attachments/assets/17b8b416-7d70-414e-bbbf-43876e08d15e)  
+![3_tela de cadastro](https://github.com/user-attachments/assets/8972a22e-03d2-4183-8d28-571ea79cd28f)
 
+## ⚠️ Soluções de problemas comuns
 
+- **Problemas com páginas HTML ao criar arquivo `.gitignore`**  
+Caso as páginas HTML não sejam exibidas corretamente ao iniciar o Live Server após a criação do `.gitignore`, atualize o projeto com F5 e reinicie o Live Server (ALT + R). Se não funcionar, reinstale o Live Server.
 
-## Solução de Problemas que Podem vir a enfrentar no Projeto
--**Problemas com paginas HTML ao criar arquivo .gitignore**
-Caso ocorra o problema das paginas html não estarem sendo mostradas e sim a estrutura de pastas ao iniciar a extenção live server, após acriação do arquivo .gitignore e a estrutura de pastas estiver correta, atualize o projeto com F5 e atualize o live server com o projeto aberto apertando as teclas ALT + R feche o projeto e abra novamente.
-Isso normalmente resolve o problema, caso não funcione desistale e reinstale o live-server.
+- **Demora na exibição da lista de livros disponíveis**  
+A lista de livros utiliza a API pública do site [Open Library](https://openlibrary.org/). Por se tratar de uma API não desenvolvida para e-commerce, a exibição pode demorar e algumas descrições podem não estar disponíveis.
+
 
 ## Manual de execução
 - Clonar o repositório com `git clone`
@@ -77,7 +73,7 @@ Isso normalmente resolve o problema, caso não funcione desistale e reinstale o 
   - Por padrão, a aplicação JSON Server executa no endereço `localhost:3000`    
 - Executar o projeto frontend.
 
-## Checklist | Indicadores de Desempenho (ID) dos Resultados de Aprendizagem (RA)
+## Checklist
 
 #### RA1 - Utilizar Frameworks CSS para estilização de elementos HTML e criação de layouts responsivos.
 - [x] ID0 - Prototipa interfaces adaptáveis para no mínimo os tamanhos de tela mobile e desktop, usando ferramentas de design como Figma, Quant UX ou Sketch.
