@@ -31,7 +31,7 @@ A aplicação foi desenvolvida com:
 - **JSON Server** – Para simular uma API REST
 
 ## 🌐 Site em Produção
-Projeto hospedado via GitHub Pages:  
+Projeto hospedado via GitHub Pages: NÂO MAIS FUNCIONAL PELO GITHUB PAGES POR MOTIVOS PRECISAR USAR PARA OUTRO PROJETO. Apos uma correção irei tentar subir o desenvolvimento em outro lugar  
 [https://natalia-lupp.github.io/Projeto_livraria_cultura/](https://natalia-lupp.github.io/Projeto_livraria_cultura/)
 
 ## 🎥 Vídeo explicativo
